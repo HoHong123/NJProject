@@ -1,8 +1,8 @@
 {
   "name": "njproject",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Work hard",
+  "author": "epzmfhs@gmail.com",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -23,6 +23,7 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "express": "^4.19.2",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
@@ -65,5 +66,7 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": "local:3000",
+  "repository": "https://github.com/HoHong123/NJProject"
 }
