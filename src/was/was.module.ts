@@ -1,17 +1,27 @@
 import { Module } from '@nestjs/common';
 import { WasService } from './was.service';
-import { WasController } from './was.controller';
-import { AuthModule } from 'src/auth/auth.module';
+import { EmailLoginController } from './controllers/email.login.controller';
+import { EmailSignupController } from './controllers/email.signup.controller';
+import { DatabaseModule } from 'src/providers/databse/database.module';
+import { RepositoryModule } from 'src/repository/repository.module';
+import { APP_FILTER } from '@nestjs/core';
+import { DuckExceptionFilter } from 'src/commons/filter/default.exception.filter';
 
 @Module({
+  imports: [
+    RepositoryModule,
+    DatabaseModule,
+  ],
   controllers: [
-    WasController
+    EmailLoginController,
+    EmailSignupController,
   ],
   providers: [
-    WasService
-  ],
-  imports: [
-    AuthModule,
+    WasService,
+    {
+      provide: APP_FILTER,
+      useClass: DuckExceptionFilter,
+    },
   ]
 })
 export class WasModule {}
