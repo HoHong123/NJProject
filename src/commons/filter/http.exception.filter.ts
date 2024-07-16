@@ -10,16 +10,16 @@ export class HttpExceptionFilter implements ExceptionFilter {
     private readonly logger = new Logger("HttpException");
 
 	catch(exception: HttpException, host: ArgumentsHost) {
-		const context 	= host.switchToHttp();
-		const response 	= context.getResponse<Response>();
-		const request 	= context.getRequest<Request>();
-		const ctxStatus = exception.getStatus();
+		const context 		= host.switchToHttp();
+		const response 		= context.getResponse<Response>();
+		const request 		= context.getRequest<Request>();
+		const status 		= exception.getStatus();
+		const errorDetail 	= errors[status] || errors.default;
 
 		// Log the exception before response
-		this.logger.error(`${request.method} ${ctxStatus} : ${exception.message} \'${request.originalUrl}\'`);
+		this.logger.error(`${request.method} ${status} : ${exception.message} \'${request.originalUrl}\'`);
 
-		const errorDetail = errors[ctxStatus] || errors.default;
-		response.status(ctxStatus).json({
+		response.status(status).json({
 			code: errorDetail.code,
 			path: request.url,
 			error: errorDetail.error,
