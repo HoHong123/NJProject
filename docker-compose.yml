@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: duckdock
+    image: postgres:13
+    environment:
+      POSTGRES_USER: jason
+      POSTGRES_PASSWORD: ghdrl007
+      POSTGRES_DB: duckdock
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:

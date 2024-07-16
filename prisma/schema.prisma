@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./db"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// TODO : Default 값은 항상 존재해야한다. = null 최소화
+//        Int 값은 unsigned인지 명확히 구분
+//        Int 값이 충분한가? tinyInt 혹은 BigInt가 더욱 적절하지 않은가?
+//        String이 varchar로 적용되는가? text로 적용되는가?
+//        DateTime과 Timestamp 중 어떤 것으로 실제 DB에 적용되는가? 둘의 차이를 명확히 아는가?
+model duckUser {
+  id            BigInt      @id         @default(autoincrement())
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime    @updatedAt  @default(now())
+  lastLogin     DateTime                @default(now())
+  
+  name          String
+  email         String      @unique
+  password      String
+
+  isDeleted     Boolean                 @default(false)
+}
+
+model inventory {
+  id            BigInt      @id         @default(autoincrement())
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime    @updatedAt  @default(now())
+  
+  userId        BigInt      @unique
+
+  slotSize      Int                     @default(10) // unsigned
+  level         Int                     @default(1)  // unsigned
+}
+
+model ducks {
+  id            BigInt      @id         @default(autoincrement())
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime    @updatedAt  @default(now())
+
+  
+}
