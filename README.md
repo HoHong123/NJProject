@@ -1,3 +1,50 @@
+
+# DuckDock - Jason
+## Project Description
+Clicker Game Server
+Personal Project (Since 2024.07.13)
+
+<br>
+
+## Requirements
+---
+### Enviorment
+
+  
+### Development
+
+
+### OS
+
+  
+<br>    
+
+## Commit rules
+
+> Always add following emoji's in commit message
+
+|Emoji|Command|Tag|Description|
+|:---|:---|:---|:---|
+|🆕|:new|feat|Add new feature|
+|🐛|:bug|fix|Fix issue|
+|♻️|:recycle|refactor|Refactoring codes|
+|🔀|:twisted_rightwards_arrows|merge|Merge branches|
+|💀|:skull|delete|Delete files|
+|📝|:memo|comment|Add comment|
+|📓|:notebook|docs|Write/Edit documentary files|
+|🚚|:truck|edit|Move/Edit files|
+
+<br>
+
+## Version control
+|Version|Progress|Description|Date|
+|----|------|---|---|
+|v0.1|Project Initialization|Starting Project|2024.07.13|
+  
+  
+---
+  
+  
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
