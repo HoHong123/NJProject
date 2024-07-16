@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "inventory" ADD COLUMN     "slotSize" INTEGER NOT NULL DEFAULT 30;
+
+-- AlterTable
+ALTER TABLE "user" ADD COLUMN     "lastLogin" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
