@@ -1,12 +1,15 @@
 import { Module } from '@nestjs/common';
+import { APP_FILTER } from '@nestjs/core';
 import { WasModule } from './was/was.module';
-import { Login } from './login/login';
-import { DatabseService } from './databse.service/databse.service';
+import { DuckExceptionFilter } from './commons/filter/default.exception.filter';
+import { DatabaseService } from './providers/databse/database.service';
 
 @Module({
   imports: [
     WasModule,
   ],
-  providers: [Login, DatabseService],
+  providers: [
+    DatabaseService,
+  ],
 })
 export class AppModule {}

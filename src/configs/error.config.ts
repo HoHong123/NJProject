@@ -1,6 +1,9 @@
+import { ErrorCode } from "src/commons/enum/error-code.enum";
+
+// TODO : code를 enum으로 변경
 const errors = {
 	400: {
-	  code: 400,
+	  code: ErrorCode.Validation,
 	  error: 'Bad Request',
 	  message: 'Validation failed.',
 	},

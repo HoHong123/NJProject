@@ -18,7 +18,7 @@ export enum ErrorCode {
 	ServiceUnavaliable 	= 503,
 }
 
-export enum TestCode {
+export enum SuccessCode {
 	Success 			= 200,
 	SuccessWithResult 	= 201,
 }
