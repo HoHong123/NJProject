@@ -1,6 +1,9 @@
 /** @format */
 
-export enum ErrorCode {
+export enum ResponseCode {
+	Success 			= 200,
+	SuccessWithResult 	= 201,
+
 	Validation 			= 400,
 	TypeError 			= 401,
 	Forbidden 			= 403,
@@ -16,15 +19,6 @@ export enum ErrorCode {
 	NotImplemented 		= 501,
 	BadGateway 			= 502,
 	ServiceUnavaliable 	= 503,
-}
-
-export enum SuccessCode {
-	Success 			= 200,
-	SuccessWithResult 	= 201,
-}
-
-export default interface Testing {
-	help: Response;
 }
 
 // 다국어 처리
