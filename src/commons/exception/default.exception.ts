@@ -1,11 +1,11 @@
 /** @format */
 
-import { ErrorCode } from 'src/commons/enum/error-code.enum';
+import { ResponseCode } from 'src/commons/enum/error-code.enum';
 
 export class DuckException extends Error {
-	public readonly code: ErrorCode;
+	public readonly code: ResponseCode;
 
-	constructor(code: ErrorCode, message: string) {
+	constructor(code: ResponseCode, message: string) {
 		super(message);
 		this.code = code;
 	}
