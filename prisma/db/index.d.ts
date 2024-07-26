@@ -23,6 +23,26 @@ export type duckUser = $Result.DefaultSelection<Prisma.$duckUserPayload>
  * 
  */
 export type inventory = $Result.DefaultSelection<Prisma.$inventoryPayload>
+/**
+ * Model ducks
+ * 
+ */
+export type ducks = $Result.DefaultSelection<Prisma.$ducksPayload>
+/**
+ * Model trade
+ * 
+ */
+export type trade = $Result.DefaultSelection<Prisma.$tradePayload>
+/**
+ * Model receipt
+ * 
+ */
+export type receipt = $Result.DefaultSelection<Prisma.$receiptPayload>
+/**
+ * Model auction
+ * 
+ */
+export type auction = $Result.DefaultSelection<Prisma.$auctionPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -165,6 +185,46 @@ export class PrismaClient<
     * ```
     */
   get inventory(): Prisma.inventoryDelegate<ExtArgs>;
+
+  /**
+   * `prisma.ducks`: Exposes CRUD operations for the **ducks** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Ducks
+    * const ducks = await prisma.ducks.findMany()
+    * ```
+    */
+  get ducks(): Prisma.ducksDelegate<ExtArgs>;
+
+  /**
+   * `prisma.trade`: Exposes CRUD operations for the **trade** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Trades
+    * const trades = await prisma.trade.findMany()
+    * ```
+    */
+  get trade(): Prisma.tradeDelegate<ExtArgs>;
+
+  /**
+   * `prisma.receipt`: Exposes CRUD operations for the **receipt** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Receipts
+    * const receipts = await prisma.receipt.findMany()
+    * ```
+    */
+  get receipt(): Prisma.receiptDelegate<ExtArgs>;
+
+  /**
+   * `prisma.auction`: Exposes CRUD operations for the **auction** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Auctions
+    * const auctions = await prisma.auction.findMany()
+    * ```
+    */
+  get auction(): Prisma.auctionDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -643,7 +703,11 @@ export namespace Prisma {
 
   export const ModelName: {
     duckUser: 'duckUser',
-    inventory: 'inventory'
+    inventory: 'inventory',
+    ducks: 'ducks',
+    trade: 'trade',
+    receipt: 'receipt',
+    auction: 'auction'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -659,7 +723,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "duckUser" | "inventory"
+      modelProps: "duckUser" | "inventory" | "ducks" | "trade" | "receipt" | "auction"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -800,6 +864,286 @@ export namespace Prisma {
           count: {
             args: Prisma.inventoryCountArgs<ExtArgs>
             result: $Utils.Optional<InventoryCountAggregateOutputType> | number
+          }
+        }
+      }
+      ducks: {
+        payload: Prisma.$ducksPayload<ExtArgs>
+        fields: Prisma.ducksFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ducksFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ducksFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>
+          }
+          findFirst: {
+            args: Prisma.ducksFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ducksFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>
+          }
+          findMany: {
+            args: Prisma.ducksFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>[]
+          }
+          create: {
+            args: Prisma.ducksCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>
+          }
+          createMany: {
+            args: Prisma.ducksCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ducksCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>[]
+          }
+          delete: {
+            args: Prisma.ducksDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>
+          }
+          update: {
+            args: Prisma.ducksUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>
+          }
+          deleteMany: {
+            args: Prisma.ducksDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ducksUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.ducksUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ducksPayload>
+          }
+          aggregate: {
+            args: Prisma.DucksAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDucks>
+          }
+          groupBy: {
+            args: Prisma.ducksGroupByArgs<ExtArgs>
+            result: $Utils.Optional<DucksGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ducksCountArgs<ExtArgs>
+            result: $Utils.Optional<DucksCountAggregateOutputType> | number
+          }
+        }
+      }
+      trade: {
+        payload: Prisma.$tradePayload<ExtArgs>
+        fields: Prisma.tradeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tradeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tradeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>
+          }
+          findFirst: {
+            args: Prisma.tradeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tradeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>
+          }
+          findMany: {
+            args: Prisma.tradeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>[]
+          }
+          create: {
+            args: Prisma.tradeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>
+          }
+          createMany: {
+            args: Prisma.tradeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tradeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>[]
+          }
+          delete: {
+            args: Prisma.tradeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>
+          }
+          update: {
+            args: Prisma.tradeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>
+          }
+          deleteMany: {
+            args: Prisma.tradeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tradeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.tradeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tradePayload>
+          }
+          aggregate: {
+            args: Prisma.TradeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTrade>
+          }
+          groupBy: {
+            args: Prisma.tradeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TradeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tradeCountArgs<ExtArgs>
+            result: $Utils.Optional<TradeCountAggregateOutputType> | number
+          }
+        }
+      }
+      receipt: {
+        payload: Prisma.$receiptPayload<ExtArgs>
+        fields: Prisma.receiptFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.receiptFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.receiptFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>
+          }
+          findFirst: {
+            args: Prisma.receiptFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.receiptFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>
+          }
+          findMany: {
+            args: Prisma.receiptFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>[]
+          }
+          create: {
+            args: Prisma.receiptCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>
+          }
+          createMany: {
+            args: Prisma.receiptCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.receiptCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>[]
+          }
+          delete: {
+            args: Prisma.receiptDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>
+          }
+          update: {
+            args: Prisma.receiptUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>
+          }
+          deleteMany: {
+            args: Prisma.receiptDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.receiptUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.receiptUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$receiptPayload>
+          }
+          aggregate: {
+            args: Prisma.ReceiptAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateReceipt>
+          }
+          groupBy: {
+            args: Prisma.receiptGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ReceiptGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.receiptCountArgs<ExtArgs>
+            result: $Utils.Optional<ReceiptCountAggregateOutputType> | number
+          }
+        }
+      }
+      auction: {
+        payload: Prisma.$auctionPayload<ExtArgs>
+        fields: Prisma.auctionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.auctionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.auctionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>
+          }
+          findFirst: {
+            args: Prisma.auctionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.auctionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>
+          }
+          findMany: {
+            args: Prisma.auctionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>[]
+          }
+          create: {
+            args: Prisma.auctionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>
+          }
+          createMany: {
+            args: Prisma.auctionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.auctionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>[]
+          }
+          delete: {
+            args: Prisma.auctionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>
+          }
+          update: {
+            args: Prisma.auctionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>
+          }
+          deleteMany: {
+            args: Prisma.auctionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.auctionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.auctionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$auctionPayload>
+          }
+          aggregate: {
+            args: Prisma.AuctionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAuction>
+          }
+          groupBy: {
+            args: Prisma.auctionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AuctionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.auctionCountArgs<ExtArgs>
+            result: $Utils.Optional<AuctionCountAggregateOutputType> | number
           }
         }
       }
@@ -981,11 +1325,11 @@ export namespace Prisma {
   }
 
   export type DuckUserSumAggregateOutputType = {
-    id: number | null
+    id: bigint | null
   }
 
   export type DuckUserMinAggregateOutputType = {
-    id: number | null
+    id: bigint | null
     createdAt: Date | null
     updatedAt: Date | null
     lastLogin: Date | null
@@ -996,7 +1340,7 @@ export namespace Prisma {
   }
 
   export type DuckUserMaxAggregateOutputType = {
-    id: number | null
+    id: bigint | null
     createdAt: Date | null
     updatedAt: Date | null
     lastLogin: Date | null
@@ -1148,7 +1492,7 @@ export namespace Prisma {
   }
 
   export type DuckUserGroupByOutputType = {
-    id: number
+    id: bigint
     createdAt: Date
     updatedAt: Date
     lastLogin: Date
@@ -1215,7 +1559,7 @@ export namespace Prisma {
     name: "duckUser"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: bigint
       createdAt: Date
       updatedAt: Date
       lastLogin: Date
@@ -1616,7 +1960,7 @@ export namespace Prisma {
    * Fields of the duckUser model
    */ 
   interface duckUserFieldRefs {
-    readonly id: FieldRef<"duckUser", 'Int'>
+    readonly id: FieldRef<"duckUser", 'BigInt'>
     readonly createdAt: FieldRef<"duckUser", 'DateTime'>
     readonly updatedAt: FieldRef<"duckUser", 'DateTime'>
     readonly lastLogin: FieldRef<"duckUser", 'DateTime'>
@@ -1794,7 +2138,7 @@ export namespace Prisma {
     /**
      * The data needed to create a duckUser.
      */
-    data: XOR<duckUserCreateInput, duckUserUncheckedCreateInput>
+    data?: XOR<duckUserCreateInput, duckUserUncheckedCreateInput>
   }
 
   /**
@@ -1928,28 +2272,32 @@ export namespace Prisma {
     id: number | null
     userId: number | null
     slotSize: number | null
+    level: number | null
   }
 
   export type InventorySumAggregateOutputType = {
-    id: number | null
-    userId: number | null
+    id: bigint | null
+    userId: bigint | null
     slotSize: number | null
+    level: number | null
   }
 
   export type InventoryMinAggregateOutputType = {
-    id: number | null
+    id: bigint | null
     createdAt: Date | null
     updatedAt: Date | null
-    userId: number | null
+    userId: bigint | null
     slotSize: number | null
+    level: number | null
   }
 
   export type InventoryMaxAggregateOutputType = {
-    id: number | null
+    id: bigint | null
     createdAt: Date | null
     updatedAt: Date | null
-    userId: number | null
+    userId: bigint | null
     slotSize: number | null
+    level: number | null
   }
 
   export type InventoryCountAggregateOutputType = {
@@ -1958,7 +2306,7 @@ export namespace Prisma {
     updatedAt: number
     userId: number
     slotSize: number
-    items: number
+    level: number
     _all: number
   }
 
@@ -1967,12 +2315,14 @@ export namespace Prisma {
     id?: true
     userId?: true
     slotSize?: true
+    level?: true
   }
 
   export type InventorySumAggregateInputType = {
     id?: true
     userId?: true
     slotSize?: true
+    level?: true
   }
 
   export type InventoryMinAggregateInputType = {
@@ -1981,6 +2331,7 @@ export namespace Prisma {
     updatedAt?: true
     userId?: true
     slotSize?: true
+    level?: true
   }
 
   export type InventoryMaxAggregateInputType = {
@@ -1989,6 +2340,7 @@ export namespace Prisma {
     updatedAt?: true
     userId?: true
     slotSize?: true
+    level?: true
   }
 
   export type InventoryCountAggregateInputType = {
@@ -1997,7 +2349,7 @@ export namespace Prisma {
     updatedAt?: true
     userId?: true
     slotSize?: true
-    items?: true
+    level?: true
     _all?: true
   }
 
@@ -2088,12 +2440,12 @@ export namespace Prisma {
   }
 
   export type InventoryGroupByOutputType = {
-    id: number
+    id: bigint
     createdAt: Date
     updatedAt: Date
-    userId: number
+    userId: bigint
     slotSize: number
-    items: JsonValue
+    level: number
     _count: InventoryCountAggregateOutputType | null
     _avg: InventoryAvgAggregateOutputType | null
     _sum: InventorySumAggregateOutputType | null
@@ -2121,7 +2473,7 @@ export namespace Prisma {
     updatedAt?: boolean
     userId?: boolean
     slotSize?: boolean
-    items?: boolean
+    level?: boolean
   }, ExtArgs["result"]["inventory"]>
 
   export type inventorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2130,7 +2482,7 @@ export namespace Prisma {
     updatedAt?: boolean
     userId?: boolean
     slotSize?: boolean
-    items?: boolean
+    level?: boolean
   }, ExtArgs["result"]["inventory"]>
 
   export type inventorySelectScalar = {
@@ -2139,7 +2491,7 @@ export namespace Prisma {
     updatedAt?: boolean
     userId?: boolean
     slotSize?: boolean
-    items?: boolean
+    level?: boolean
   }
 
 
@@ -2147,12 +2499,12 @@ export namespace Prisma {
     name: "inventory"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: bigint
       createdAt: Date
       updatedAt: Date
-      userId: number
+      userId: bigint
       slotSize: number
-      items: Prisma.JsonValue
+      level: number
     }, ExtArgs["result"]["inventory"]>
     composites: {}
   }
@@ -2546,12 +2898,12 @@ export namespace Prisma {
    * Fields of the inventory model
    */ 
   interface inventoryFieldRefs {
-    readonly id: FieldRef<"inventory", 'Int'>
+    readonly id: FieldRef<"inventory", 'BigInt'>
     readonly createdAt: FieldRef<"inventory", 'DateTime'>
     readonly updatedAt: FieldRef<"inventory", 'DateTime'>
-    readonly userId: FieldRef<"inventory", 'Int'>
+    readonly userId: FieldRef<"inventory", 'BigInt'>
     readonly slotSize: FieldRef<"inventory", 'Int'>
-    readonly items: FieldRef<"inventory", 'Json'>
+    readonly level: FieldRef<"inventory", 'Int'>
   }
     
 
@@ -2841,6 +3193,3754 @@ export namespace Prisma {
 
 
   /**
+   * Model ducks
+   */
+
+  export type AggregateDucks = {
+    _count: DucksCountAggregateOutputType | null
+    _avg: DucksAvgAggregateOutputType | null
+    _sum: DucksSumAggregateOutputType | null
+    _min: DucksMinAggregateOutputType | null
+    _max: DucksMaxAggregateOutputType | null
+  }
+
+  export type DucksAvgAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    price: number | null
+  }
+
+  export type DucksSumAggregateOutputType = {
+    id: bigint | null
+    userId: bigint | null
+    price: bigint | null
+  }
+
+  export type DucksMinAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: bigint | null
+    name: string | null
+    image: string | null
+    price: bigint | null
+  }
+
+  export type DucksMaxAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: bigint | null
+    name: string | null
+    image: string | null
+    price: bigint | null
+  }
+
+  export type DucksCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    userId: number
+    name: number
+    image: number
+    price: number
+    _all: number
+  }
+
+
+  export type DucksAvgAggregateInputType = {
+    id?: true
+    userId?: true
+    price?: true
+  }
+
+  export type DucksSumAggregateInputType = {
+    id?: true
+    userId?: true
+    price?: true
+  }
+
+  export type DucksMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    name?: true
+    image?: true
+    price?: true
+  }
+
+  export type DucksMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    name?: true
+    image?: true
+    price?: true
+  }
+
+  export type DucksCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    name?: true
+    image?: true
+    price?: true
+    _all?: true
+  }
+
+  export type DucksAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ducks to aggregate.
+     */
+    where?: ducksWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ducks to fetch.
+     */
+    orderBy?: ducksOrderByWithRelationInput | ducksOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ducksWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ducks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ducks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ducks
+    **/
+    _count?: true | DucksCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: DucksAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: DucksSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: DucksMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: DucksMaxAggregateInputType
+  }
+
+  export type GetDucksAggregateType<T extends DucksAggregateArgs> = {
+        [P in keyof T & keyof AggregateDucks]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDucks[P]>
+      : GetScalarType<T[P], AggregateDucks[P]>
+  }
+
+
+
+
+  export type ducksGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ducksWhereInput
+    orderBy?: ducksOrderByWithAggregationInput | ducksOrderByWithAggregationInput[]
+    by: DucksScalarFieldEnum[] | DucksScalarFieldEnum
+    having?: ducksScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: DucksCountAggregateInputType | true
+    _avg?: DucksAvgAggregateInputType
+    _sum?: DucksSumAggregateInputType
+    _min?: DucksMinAggregateInputType
+    _max?: DucksMaxAggregateInputType
+  }
+
+  export type DucksGroupByOutputType = {
+    id: bigint
+    createdAt: Date
+    updatedAt: Date
+    userId: bigint | null
+    name: string
+    image: string
+    price: bigint
+    _count: DucksCountAggregateOutputType | null
+    _avg: DucksAvgAggregateOutputType | null
+    _sum: DucksSumAggregateOutputType | null
+    _min: DucksMinAggregateOutputType | null
+    _max: DucksMaxAggregateOutputType | null
+  }
+
+  type GetDucksGroupByPayload<T extends ducksGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<DucksGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof DucksGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], DucksGroupByOutputType[P]>
+            : GetScalarType<T[P], DucksGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ducksSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    name?: boolean
+    image?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["ducks"]>
+
+  export type ducksSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    name?: boolean
+    image?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["ducks"]>
+
+  export type ducksSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    name?: boolean
+    image?: boolean
+    price?: boolean
+  }
+
+
+  export type $ducksPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ducks"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: bigint
+      createdAt: Date
+      updatedAt: Date
+      userId: bigint | null
+      name: string
+      image: string
+      price: bigint
+    }, ExtArgs["result"]["ducks"]>
+    composites: {}
+  }
+
+  type ducksGetPayload<S extends boolean | null | undefined | ducksDefaultArgs> = $Result.GetResult<Prisma.$ducksPayload, S>
+
+  type ducksCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<ducksFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: DucksCountAggregateInputType | true
+    }
+
+  export interface ducksDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ducks'], meta: { name: 'ducks' } }
+    /**
+     * Find zero or one Ducks that matches the filter.
+     * @param {ducksFindUniqueArgs} args - Arguments to find a Ducks
+     * @example
+     * // Get one Ducks
+     * const ducks = await prisma.ducks.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ducksFindUniqueArgs>(args: SelectSubset<T, ducksFindUniqueArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Ducks that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {ducksFindUniqueOrThrowArgs} args - Arguments to find a Ducks
+     * @example
+     * // Get one Ducks
+     * const ducks = await prisma.ducks.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ducksFindUniqueOrThrowArgs>(args: SelectSubset<T, ducksFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Ducks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ducksFindFirstArgs} args - Arguments to find a Ducks
+     * @example
+     * // Get one Ducks
+     * const ducks = await prisma.ducks.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ducksFindFirstArgs>(args?: SelectSubset<T, ducksFindFirstArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Ducks that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ducksFindFirstOrThrowArgs} args - Arguments to find a Ducks
+     * @example
+     * // Get one Ducks
+     * const ducks = await prisma.ducks.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ducksFindFirstOrThrowArgs>(args?: SelectSubset<T, ducksFindFirstOrThrowArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Ducks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ducksFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Ducks
+     * const ducks = await prisma.ducks.findMany()
+     * 
+     * // Get first 10 Ducks
+     * const ducks = await prisma.ducks.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const ducksWithIdOnly = await prisma.ducks.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ducksFindManyArgs>(args?: SelectSubset<T, ducksFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Ducks.
+     * @param {ducksCreateArgs} args - Arguments to create a Ducks.
+     * @example
+     * // Create one Ducks
+     * const Ducks = await prisma.ducks.create({
+     *   data: {
+     *     // ... data to create a Ducks
+     *   }
+     * })
+     * 
+     */
+    create<T extends ducksCreateArgs>(args: SelectSubset<T, ducksCreateArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Ducks.
+     * @param {ducksCreateManyArgs} args - Arguments to create many Ducks.
+     * @example
+     * // Create many Ducks
+     * const ducks = await prisma.ducks.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ducksCreateManyArgs>(args?: SelectSubset<T, ducksCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Ducks and returns the data saved in the database.
+     * @param {ducksCreateManyAndReturnArgs} args - Arguments to create many Ducks.
+     * @example
+     * // Create many Ducks
+     * const ducks = await prisma.ducks.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Ducks and only return the `id`
+     * const ducksWithIdOnly = await prisma.ducks.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ducksCreateManyAndReturnArgs>(args?: SelectSubset<T, ducksCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a Ducks.
+     * @param {ducksDeleteArgs} args - Arguments to delete one Ducks.
+     * @example
+     * // Delete one Ducks
+     * const Ducks = await prisma.ducks.delete({
+     *   where: {
+     *     // ... filter to delete one Ducks
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ducksDeleteArgs>(args: SelectSubset<T, ducksDeleteArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Ducks.
+     * @param {ducksUpdateArgs} args - Arguments to update one Ducks.
+     * @example
+     * // Update one Ducks
+     * const ducks = await prisma.ducks.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ducksUpdateArgs>(args: SelectSubset<T, ducksUpdateArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Ducks.
+     * @param {ducksDeleteManyArgs} args - Arguments to filter Ducks to delete.
+     * @example
+     * // Delete a few Ducks
+     * const { count } = await prisma.ducks.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ducksDeleteManyArgs>(args?: SelectSubset<T, ducksDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Ducks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ducksUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Ducks
+     * const ducks = await prisma.ducks.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ducksUpdateManyArgs>(args: SelectSubset<T, ducksUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Ducks.
+     * @param {ducksUpsertArgs} args - Arguments to update or create a Ducks.
+     * @example
+     * // Update or create a Ducks
+     * const ducks = await prisma.ducks.upsert({
+     *   create: {
+     *     // ... data to create a Ducks
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Ducks we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ducksUpsertArgs>(args: SelectSubset<T, ducksUpsertArgs<ExtArgs>>): Prisma__ducksClient<$Result.GetResult<Prisma.$ducksPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Ducks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ducksCountArgs} args - Arguments to filter Ducks to count.
+     * @example
+     * // Count the number of Ducks
+     * const count = await prisma.ducks.count({
+     *   where: {
+     *     // ... the filter for the Ducks we want to count
+     *   }
+     * })
+    **/
+    count<T extends ducksCountArgs>(
+      args?: Subset<T, ducksCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], DucksCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Ducks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {DucksAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends DucksAggregateArgs>(args: Subset<T, DucksAggregateArgs>): Prisma.PrismaPromise<GetDucksAggregateType<T>>
+
+    /**
+     * Group by Ducks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ducksGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ducksGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ducksGroupByArgs['orderBy'] }
+        : { orderBy?: ducksGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ducksGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDucksGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ducks model
+   */
+  readonly fields: ducksFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ducks.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ducksClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ducks model
+   */ 
+  interface ducksFieldRefs {
+    readonly id: FieldRef<"ducks", 'BigInt'>
+    readonly createdAt: FieldRef<"ducks", 'DateTime'>
+    readonly updatedAt: FieldRef<"ducks", 'DateTime'>
+    readonly userId: FieldRef<"ducks", 'BigInt'>
+    readonly name: FieldRef<"ducks", 'String'>
+    readonly image: FieldRef<"ducks", 'String'>
+    readonly price: FieldRef<"ducks", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ducks findUnique
+   */
+  export type ducksFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * Filter, which ducks to fetch.
+     */
+    where: ducksWhereUniqueInput
+  }
+
+  /**
+   * ducks findUniqueOrThrow
+   */
+  export type ducksFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * Filter, which ducks to fetch.
+     */
+    where: ducksWhereUniqueInput
+  }
+
+  /**
+   * ducks findFirst
+   */
+  export type ducksFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * Filter, which ducks to fetch.
+     */
+    where?: ducksWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ducks to fetch.
+     */
+    orderBy?: ducksOrderByWithRelationInput | ducksOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ducks.
+     */
+    cursor?: ducksWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ducks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ducks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ducks.
+     */
+    distinct?: DucksScalarFieldEnum | DucksScalarFieldEnum[]
+  }
+
+  /**
+   * ducks findFirstOrThrow
+   */
+  export type ducksFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * Filter, which ducks to fetch.
+     */
+    where?: ducksWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ducks to fetch.
+     */
+    orderBy?: ducksOrderByWithRelationInput | ducksOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ducks.
+     */
+    cursor?: ducksWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ducks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ducks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ducks.
+     */
+    distinct?: DucksScalarFieldEnum | DucksScalarFieldEnum[]
+  }
+
+  /**
+   * ducks findMany
+   */
+  export type ducksFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * Filter, which ducks to fetch.
+     */
+    where?: ducksWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ducks to fetch.
+     */
+    orderBy?: ducksOrderByWithRelationInput | ducksOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ducks.
+     */
+    cursor?: ducksWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ducks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ducks.
+     */
+    skip?: number
+    distinct?: DucksScalarFieldEnum | DucksScalarFieldEnum[]
+  }
+
+  /**
+   * ducks create
+   */
+  export type ducksCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * The data needed to create a ducks.
+     */
+    data?: XOR<ducksCreateInput, ducksUncheckedCreateInput>
+  }
+
+  /**
+   * ducks createMany
+   */
+  export type ducksCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ducks.
+     */
+    data: ducksCreateManyInput | ducksCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ducks createManyAndReturn
+   */
+  export type ducksCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many ducks.
+     */
+    data: ducksCreateManyInput | ducksCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ducks update
+   */
+  export type ducksUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * The data needed to update a ducks.
+     */
+    data: XOR<ducksUpdateInput, ducksUncheckedUpdateInput>
+    /**
+     * Choose, which ducks to update.
+     */
+    where: ducksWhereUniqueInput
+  }
+
+  /**
+   * ducks updateMany
+   */
+  export type ducksUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ducks.
+     */
+    data: XOR<ducksUpdateManyMutationInput, ducksUncheckedUpdateManyInput>
+    /**
+     * Filter which ducks to update
+     */
+    where?: ducksWhereInput
+  }
+
+  /**
+   * ducks upsert
+   */
+  export type ducksUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * The filter to search for the ducks to update in case it exists.
+     */
+    where: ducksWhereUniqueInput
+    /**
+     * In case the ducks found by the `where` argument doesn't exist, create a new ducks with this data.
+     */
+    create: XOR<ducksCreateInput, ducksUncheckedCreateInput>
+    /**
+     * In case the ducks was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ducksUpdateInput, ducksUncheckedUpdateInput>
+  }
+
+  /**
+   * ducks delete
+   */
+  export type ducksDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+    /**
+     * Filter which ducks to delete.
+     */
+    where: ducksWhereUniqueInput
+  }
+
+  /**
+   * ducks deleteMany
+   */
+  export type ducksDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ducks to delete
+     */
+    where?: ducksWhereInput
+  }
+
+  /**
+   * ducks without action
+   */
+  export type ducksDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ducks
+     */
+    select?: ducksSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model trade
+   */
+
+  export type AggregateTrade = {
+    _count: TradeCountAggregateOutputType | null
+    _avg: TradeAvgAggregateOutputType | null
+    _sum: TradeSumAggregateOutputType | null
+    _min: TradeMinAggregateOutputType | null
+    _max: TradeMaxAggregateOutputType | null
+  }
+
+  export type TradeAvgAggregateOutputType = {
+    id: number | null
+    auctionId: number | null
+    receiver: number | null
+  }
+
+  export type TradeSumAggregateOutputType = {
+    id: bigint | null
+    auctionId: bigint | null
+    receiver: bigint | null
+  }
+
+  export type TradeMinAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    auctionId: bigint | null
+    receiver: bigint | null
+  }
+
+  export type TradeMaxAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    auctionId: bigint | null
+    receiver: bigint | null
+  }
+
+  export type TradeCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    auctionId: number
+    receiver: number
+    _all: number
+  }
+
+
+  export type TradeAvgAggregateInputType = {
+    id?: true
+    auctionId?: true
+    receiver?: true
+  }
+
+  export type TradeSumAggregateInputType = {
+    id?: true
+    auctionId?: true
+    receiver?: true
+  }
+
+  export type TradeMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    auctionId?: true
+    receiver?: true
+  }
+
+  export type TradeMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    auctionId?: true
+    receiver?: true
+  }
+
+  export type TradeCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    auctionId?: true
+    receiver?: true
+    _all?: true
+  }
+
+  export type TradeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which trade to aggregate.
+     */
+    where?: tradeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of trades to fetch.
+     */
+    orderBy?: tradeOrderByWithRelationInput | tradeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tradeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` trades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` trades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned trades
+    **/
+    _count?: true | TradeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TradeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TradeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TradeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TradeMaxAggregateInputType
+  }
+
+  export type GetTradeAggregateType<T extends TradeAggregateArgs> = {
+        [P in keyof T & keyof AggregateTrade]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTrade[P]>
+      : GetScalarType<T[P], AggregateTrade[P]>
+  }
+
+
+
+
+  export type tradeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tradeWhereInput
+    orderBy?: tradeOrderByWithAggregationInput | tradeOrderByWithAggregationInput[]
+    by: TradeScalarFieldEnum[] | TradeScalarFieldEnum
+    having?: tradeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TradeCountAggregateInputType | true
+    _avg?: TradeAvgAggregateInputType
+    _sum?: TradeSumAggregateInputType
+    _min?: TradeMinAggregateInputType
+    _max?: TradeMaxAggregateInputType
+  }
+
+  export type TradeGroupByOutputType = {
+    id: bigint
+    createdAt: Date
+    updatedAt: Date
+    auctionId: bigint
+    receiver: bigint
+    _count: TradeCountAggregateOutputType | null
+    _avg: TradeAvgAggregateOutputType | null
+    _sum: TradeSumAggregateOutputType | null
+    _min: TradeMinAggregateOutputType | null
+    _max: TradeMaxAggregateOutputType | null
+  }
+
+  type GetTradeGroupByPayload<T extends tradeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TradeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TradeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TradeGroupByOutputType[P]>
+            : GetScalarType<T[P], TradeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tradeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    auctionId?: boolean
+    receiver?: boolean
+  }, ExtArgs["result"]["trade"]>
+
+  export type tradeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    auctionId?: boolean
+    receiver?: boolean
+  }, ExtArgs["result"]["trade"]>
+
+  export type tradeSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    auctionId?: boolean
+    receiver?: boolean
+  }
+
+
+  export type $tradePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "trade"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: bigint
+      createdAt: Date
+      updatedAt: Date
+      auctionId: bigint
+      receiver: bigint
+    }, ExtArgs["result"]["trade"]>
+    composites: {}
+  }
+
+  type tradeGetPayload<S extends boolean | null | undefined | tradeDefaultArgs> = $Result.GetResult<Prisma.$tradePayload, S>
+
+  type tradeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<tradeFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TradeCountAggregateInputType | true
+    }
+
+  export interface tradeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['trade'], meta: { name: 'trade' } }
+    /**
+     * Find zero or one Trade that matches the filter.
+     * @param {tradeFindUniqueArgs} args - Arguments to find a Trade
+     * @example
+     * // Get one Trade
+     * const trade = await prisma.trade.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tradeFindUniqueArgs>(args: SelectSubset<T, tradeFindUniqueArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Trade that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {tradeFindUniqueOrThrowArgs} args - Arguments to find a Trade
+     * @example
+     * // Get one Trade
+     * const trade = await prisma.trade.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tradeFindUniqueOrThrowArgs>(args: SelectSubset<T, tradeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Trade that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tradeFindFirstArgs} args - Arguments to find a Trade
+     * @example
+     * // Get one Trade
+     * const trade = await prisma.trade.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tradeFindFirstArgs>(args?: SelectSubset<T, tradeFindFirstArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Trade that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tradeFindFirstOrThrowArgs} args - Arguments to find a Trade
+     * @example
+     * // Get one Trade
+     * const trade = await prisma.trade.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tradeFindFirstOrThrowArgs>(args?: SelectSubset<T, tradeFindFirstOrThrowArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Trades that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tradeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Trades
+     * const trades = await prisma.trade.findMany()
+     * 
+     * // Get first 10 Trades
+     * const trades = await prisma.trade.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const tradeWithIdOnly = await prisma.trade.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends tradeFindManyArgs>(args?: SelectSubset<T, tradeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Trade.
+     * @param {tradeCreateArgs} args - Arguments to create a Trade.
+     * @example
+     * // Create one Trade
+     * const Trade = await prisma.trade.create({
+     *   data: {
+     *     // ... data to create a Trade
+     *   }
+     * })
+     * 
+     */
+    create<T extends tradeCreateArgs>(args: SelectSubset<T, tradeCreateArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Trades.
+     * @param {tradeCreateManyArgs} args - Arguments to create many Trades.
+     * @example
+     * // Create many Trades
+     * const trade = await prisma.trade.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tradeCreateManyArgs>(args?: SelectSubset<T, tradeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Trades and returns the data saved in the database.
+     * @param {tradeCreateManyAndReturnArgs} args - Arguments to create many Trades.
+     * @example
+     * // Create many Trades
+     * const trade = await prisma.trade.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Trades and only return the `id`
+     * const tradeWithIdOnly = await prisma.trade.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tradeCreateManyAndReturnArgs>(args?: SelectSubset<T, tradeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a Trade.
+     * @param {tradeDeleteArgs} args - Arguments to delete one Trade.
+     * @example
+     * // Delete one Trade
+     * const Trade = await prisma.trade.delete({
+     *   where: {
+     *     // ... filter to delete one Trade
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tradeDeleteArgs>(args: SelectSubset<T, tradeDeleteArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Trade.
+     * @param {tradeUpdateArgs} args - Arguments to update one Trade.
+     * @example
+     * // Update one Trade
+     * const trade = await prisma.trade.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tradeUpdateArgs>(args: SelectSubset<T, tradeUpdateArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Trades.
+     * @param {tradeDeleteManyArgs} args - Arguments to filter Trades to delete.
+     * @example
+     * // Delete a few Trades
+     * const { count } = await prisma.trade.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tradeDeleteManyArgs>(args?: SelectSubset<T, tradeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Trades.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tradeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Trades
+     * const trade = await prisma.trade.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tradeUpdateManyArgs>(args: SelectSubset<T, tradeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Trade.
+     * @param {tradeUpsertArgs} args - Arguments to update or create a Trade.
+     * @example
+     * // Update or create a Trade
+     * const trade = await prisma.trade.upsert({
+     *   create: {
+     *     // ... data to create a Trade
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Trade we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tradeUpsertArgs>(args: SelectSubset<T, tradeUpsertArgs<ExtArgs>>): Prisma__tradeClient<$Result.GetResult<Prisma.$tradePayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Trades.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tradeCountArgs} args - Arguments to filter Trades to count.
+     * @example
+     * // Count the number of Trades
+     * const count = await prisma.trade.count({
+     *   where: {
+     *     // ... the filter for the Trades we want to count
+     *   }
+     * })
+    **/
+    count<T extends tradeCountArgs>(
+      args?: Subset<T, tradeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TradeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Trade.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TradeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TradeAggregateArgs>(args: Subset<T, TradeAggregateArgs>): Prisma.PrismaPromise<GetTradeAggregateType<T>>
+
+    /**
+     * Group by Trade.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tradeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tradeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tradeGroupByArgs['orderBy'] }
+        : { orderBy?: tradeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tradeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTradeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the trade model
+   */
+  readonly fields: tradeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for trade.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tradeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the trade model
+   */ 
+  interface tradeFieldRefs {
+    readonly id: FieldRef<"trade", 'BigInt'>
+    readonly createdAt: FieldRef<"trade", 'DateTime'>
+    readonly updatedAt: FieldRef<"trade", 'DateTime'>
+    readonly auctionId: FieldRef<"trade", 'BigInt'>
+    readonly receiver: FieldRef<"trade", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * trade findUnique
+   */
+  export type tradeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * Filter, which trade to fetch.
+     */
+    where: tradeWhereUniqueInput
+  }
+
+  /**
+   * trade findUniqueOrThrow
+   */
+  export type tradeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * Filter, which trade to fetch.
+     */
+    where: tradeWhereUniqueInput
+  }
+
+  /**
+   * trade findFirst
+   */
+  export type tradeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * Filter, which trade to fetch.
+     */
+    where?: tradeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of trades to fetch.
+     */
+    orderBy?: tradeOrderByWithRelationInput | tradeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for trades.
+     */
+    cursor?: tradeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` trades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` trades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of trades.
+     */
+    distinct?: TradeScalarFieldEnum | TradeScalarFieldEnum[]
+  }
+
+  /**
+   * trade findFirstOrThrow
+   */
+  export type tradeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * Filter, which trade to fetch.
+     */
+    where?: tradeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of trades to fetch.
+     */
+    orderBy?: tradeOrderByWithRelationInput | tradeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for trades.
+     */
+    cursor?: tradeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` trades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` trades.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of trades.
+     */
+    distinct?: TradeScalarFieldEnum | TradeScalarFieldEnum[]
+  }
+
+  /**
+   * trade findMany
+   */
+  export type tradeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * Filter, which trades to fetch.
+     */
+    where?: tradeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of trades to fetch.
+     */
+    orderBy?: tradeOrderByWithRelationInput | tradeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing trades.
+     */
+    cursor?: tradeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` trades from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` trades.
+     */
+    skip?: number
+    distinct?: TradeScalarFieldEnum | TradeScalarFieldEnum[]
+  }
+
+  /**
+   * trade create
+   */
+  export type tradeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * The data needed to create a trade.
+     */
+    data: XOR<tradeCreateInput, tradeUncheckedCreateInput>
+  }
+
+  /**
+   * trade createMany
+   */
+  export type tradeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many trades.
+     */
+    data: tradeCreateManyInput | tradeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * trade createManyAndReturn
+   */
+  export type tradeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many trades.
+     */
+    data: tradeCreateManyInput | tradeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * trade update
+   */
+  export type tradeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * The data needed to update a trade.
+     */
+    data: XOR<tradeUpdateInput, tradeUncheckedUpdateInput>
+    /**
+     * Choose, which trade to update.
+     */
+    where: tradeWhereUniqueInput
+  }
+
+  /**
+   * trade updateMany
+   */
+  export type tradeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update trades.
+     */
+    data: XOR<tradeUpdateManyMutationInput, tradeUncheckedUpdateManyInput>
+    /**
+     * Filter which trades to update
+     */
+    where?: tradeWhereInput
+  }
+
+  /**
+   * trade upsert
+   */
+  export type tradeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * The filter to search for the trade to update in case it exists.
+     */
+    where: tradeWhereUniqueInput
+    /**
+     * In case the trade found by the `where` argument doesn't exist, create a new trade with this data.
+     */
+    create: XOR<tradeCreateInput, tradeUncheckedCreateInput>
+    /**
+     * In case the trade was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tradeUpdateInput, tradeUncheckedUpdateInput>
+  }
+
+  /**
+   * trade delete
+   */
+  export type tradeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+    /**
+     * Filter which trade to delete.
+     */
+    where: tradeWhereUniqueInput
+  }
+
+  /**
+   * trade deleteMany
+   */
+  export type tradeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which trades to delete
+     */
+    where?: tradeWhereInput
+  }
+
+  /**
+   * trade without action
+   */
+  export type tradeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the trade
+     */
+    select?: tradeSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model receipt
+   */
+
+  export type AggregateReceipt = {
+    _count: ReceiptCountAggregateOutputType | null
+    _avg: ReceiptAvgAggregateOutputType | null
+    _sum: ReceiptSumAggregateOutputType | null
+    _min: ReceiptMinAggregateOutputType | null
+    _max: ReceiptMaxAggregateOutputType | null
+  }
+
+  export type ReceiptAvgAggregateOutputType = {
+    id: number | null
+    tradeId: number | null
+    status: number | null
+  }
+
+  export type ReceiptSumAggregateOutputType = {
+    id: bigint | null
+    tradeId: bigint | null
+    status: number | null
+  }
+
+  export type ReceiptMinAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    tradeId: bigint | null
+    status: number | null
+  }
+
+  export type ReceiptMaxAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    tradeId: bigint | null
+    status: number | null
+  }
+
+  export type ReceiptCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    tradeId: number
+    status: number
+    _all: number
+  }
+
+
+  export type ReceiptAvgAggregateInputType = {
+    id?: true
+    tradeId?: true
+    status?: true
+  }
+
+  export type ReceiptSumAggregateInputType = {
+    id?: true
+    tradeId?: true
+    status?: true
+  }
+
+  export type ReceiptMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    tradeId?: true
+    status?: true
+  }
+
+  export type ReceiptMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    tradeId?: true
+    status?: true
+  }
+
+  export type ReceiptCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    tradeId?: true
+    status?: true
+    _all?: true
+  }
+
+  export type ReceiptAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which receipt to aggregate.
+     */
+    where?: receiptWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of receipts to fetch.
+     */
+    orderBy?: receiptOrderByWithRelationInput | receiptOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: receiptWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` receipts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` receipts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned receipts
+    **/
+    _count?: true | ReceiptCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ReceiptAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ReceiptSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ReceiptMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ReceiptMaxAggregateInputType
+  }
+
+  export type GetReceiptAggregateType<T extends ReceiptAggregateArgs> = {
+        [P in keyof T & keyof AggregateReceipt]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateReceipt[P]>
+      : GetScalarType<T[P], AggregateReceipt[P]>
+  }
+
+
+
+
+  export type receiptGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: receiptWhereInput
+    orderBy?: receiptOrderByWithAggregationInput | receiptOrderByWithAggregationInput[]
+    by: ReceiptScalarFieldEnum[] | ReceiptScalarFieldEnum
+    having?: receiptScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ReceiptCountAggregateInputType | true
+    _avg?: ReceiptAvgAggregateInputType
+    _sum?: ReceiptSumAggregateInputType
+    _min?: ReceiptMinAggregateInputType
+    _max?: ReceiptMaxAggregateInputType
+  }
+
+  export type ReceiptGroupByOutputType = {
+    id: bigint
+    createdAt: Date
+    updatedAt: Date
+    tradeId: bigint
+    status: number
+    _count: ReceiptCountAggregateOutputType | null
+    _avg: ReceiptAvgAggregateOutputType | null
+    _sum: ReceiptSumAggregateOutputType | null
+    _min: ReceiptMinAggregateOutputType | null
+    _max: ReceiptMaxAggregateOutputType | null
+  }
+
+  type GetReceiptGroupByPayload<T extends receiptGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ReceiptGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ReceiptGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ReceiptGroupByOutputType[P]>
+            : GetScalarType<T[P], ReceiptGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type receiptSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    tradeId?: boolean
+    status?: boolean
+  }, ExtArgs["result"]["receipt"]>
+
+  export type receiptSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    tradeId?: boolean
+    status?: boolean
+  }, ExtArgs["result"]["receipt"]>
+
+  export type receiptSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    tradeId?: boolean
+    status?: boolean
+  }
+
+
+  export type $receiptPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "receipt"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: bigint
+      createdAt: Date
+      updatedAt: Date
+      tradeId: bigint
+      status: number
+    }, ExtArgs["result"]["receipt"]>
+    composites: {}
+  }
+
+  type receiptGetPayload<S extends boolean | null | undefined | receiptDefaultArgs> = $Result.GetResult<Prisma.$receiptPayload, S>
+
+  type receiptCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<receiptFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: ReceiptCountAggregateInputType | true
+    }
+
+  export interface receiptDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['receipt'], meta: { name: 'receipt' } }
+    /**
+     * Find zero or one Receipt that matches the filter.
+     * @param {receiptFindUniqueArgs} args - Arguments to find a Receipt
+     * @example
+     * // Get one Receipt
+     * const receipt = await prisma.receipt.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends receiptFindUniqueArgs>(args: SelectSubset<T, receiptFindUniqueArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Receipt that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {receiptFindUniqueOrThrowArgs} args - Arguments to find a Receipt
+     * @example
+     * // Get one Receipt
+     * const receipt = await prisma.receipt.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends receiptFindUniqueOrThrowArgs>(args: SelectSubset<T, receiptFindUniqueOrThrowArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Receipt that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {receiptFindFirstArgs} args - Arguments to find a Receipt
+     * @example
+     * // Get one Receipt
+     * const receipt = await prisma.receipt.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends receiptFindFirstArgs>(args?: SelectSubset<T, receiptFindFirstArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Receipt that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {receiptFindFirstOrThrowArgs} args - Arguments to find a Receipt
+     * @example
+     * // Get one Receipt
+     * const receipt = await prisma.receipt.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends receiptFindFirstOrThrowArgs>(args?: SelectSubset<T, receiptFindFirstOrThrowArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Receipts that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {receiptFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Receipts
+     * const receipts = await prisma.receipt.findMany()
+     * 
+     * // Get first 10 Receipts
+     * const receipts = await prisma.receipt.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const receiptWithIdOnly = await prisma.receipt.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends receiptFindManyArgs>(args?: SelectSubset<T, receiptFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Receipt.
+     * @param {receiptCreateArgs} args - Arguments to create a Receipt.
+     * @example
+     * // Create one Receipt
+     * const Receipt = await prisma.receipt.create({
+     *   data: {
+     *     // ... data to create a Receipt
+     *   }
+     * })
+     * 
+     */
+    create<T extends receiptCreateArgs>(args: SelectSubset<T, receiptCreateArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Receipts.
+     * @param {receiptCreateManyArgs} args - Arguments to create many Receipts.
+     * @example
+     * // Create many Receipts
+     * const receipt = await prisma.receipt.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends receiptCreateManyArgs>(args?: SelectSubset<T, receiptCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Receipts and returns the data saved in the database.
+     * @param {receiptCreateManyAndReturnArgs} args - Arguments to create many Receipts.
+     * @example
+     * // Create many Receipts
+     * const receipt = await prisma.receipt.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Receipts and only return the `id`
+     * const receiptWithIdOnly = await prisma.receipt.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends receiptCreateManyAndReturnArgs>(args?: SelectSubset<T, receiptCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a Receipt.
+     * @param {receiptDeleteArgs} args - Arguments to delete one Receipt.
+     * @example
+     * // Delete one Receipt
+     * const Receipt = await prisma.receipt.delete({
+     *   where: {
+     *     // ... filter to delete one Receipt
+     *   }
+     * })
+     * 
+     */
+    delete<T extends receiptDeleteArgs>(args: SelectSubset<T, receiptDeleteArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Receipt.
+     * @param {receiptUpdateArgs} args - Arguments to update one Receipt.
+     * @example
+     * // Update one Receipt
+     * const receipt = await prisma.receipt.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends receiptUpdateArgs>(args: SelectSubset<T, receiptUpdateArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Receipts.
+     * @param {receiptDeleteManyArgs} args - Arguments to filter Receipts to delete.
+     * @example
+     * // Delete a few Receipts
+     * const { count } = await prisma.receipt.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends receiptDeleteManyArgs>(args?: SelectSubset<T, receiptDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Receipts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {receiptUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Receipts
+     * const receipt = await prisma.receipt.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends receiptUpdateManyArgs>(args: SelectSubset<T, receiptUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Receipt.
+     * @param {receiptUpsertArgs} args - Arguments to update or create a Receipt.
+     * @example
+     * // Update or create a Receipt
+     * const receipt = await prisma.receipt.upsert({
+     *   create: {
+     *     // ... data to create a Receipt
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Receipt we want to update
+     *   }
+     * })
+     */
+    upsert<T extends receiptUpsertArgs>(args: SelectSubset<T, receiptUpsertArgs<ExtArgs>>): Prisma__receiptClient<$Result.GetResult<Prisma.$receiptPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Receipts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {receiptCountArgs} args - Arguments to filter Receipts to count.
+     * @example
+     * // Count the number of Receipts
+     * const count = await prisma.receipt.count({
+     *   where: {
+     *     // ... the filter for the Receipts we want to count
+     *   }
+     * })
+    **/
+    count<T extends receiptCountArgs>(
+      args?: Subset<T, receiptCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ReceiptCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Receipt.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReceiptAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ReceiptAggregateArgs>(args: Subset<T, ReceiptAggregateArgs>): Prisma.PrismaPromise<GetReceiptAggregateType<T>>
+
+    /**
+     * Group by Receipt.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {receiptGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends receiptGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: receiptGroupByArgs['orderBy'] }
+        : { orderBy?: receiptGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, receiptGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReceiptGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the receipt model
+   */
+  readonly fields: receiptFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for receipt.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__receiptClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the receipt model
+   */ 
+  interface receiptFieldRefs {
+    readonly id: FieldRef<"receipt", 'BigInt'>
+    readonly createdAt: FieldRef<"receipt", 'DateTime'>
+    readonly updatedAt: FieldRef<"receipt", 'DateTime'>
+    readonly tradeId: FieldRef<"receipt", 'BigInt'>
+    readonly status: FieldRef<"receipt", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * receipt findUnique
+   */
+  export type receiptFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * Filter, which receipt to fetch.
+     */
+    where: receiptWhereUniqueInput
+  }
+
+  /**
+   * receipt findUniqueOrThrow
+   */
+  export type receiptFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * Filter, which receipt to fetch.
+     */
+    where: receiptWhereUniqueInput
+  }
+
+  /**
+   * receipt findFirst
+   */
+  export type receiptFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * Filter, which receipt to fetch.
+     */
+    where?: receiptWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of receipts to fetch.
+     */
+    orderBy?: receiptOrderByWithRelationInput | receiptOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for receipts.
+     */
+    cursor?: receiptWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` receipts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` receipts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of receipts.
+     */
+    distinct?: ReceiptScalarFieldEnum | ReceiptScalarFieldEnum[]
+  }
+
+  /**
+   * receipt findFirstOrThrow
+   */
+  export type receiptFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * Filter, which receipt to fetch.
+     */
+    where?: receiptWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of receipts to fetch.
+     */
+    orderBy?: receiptOrderByWithRelationInput | receiptOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for receipts.
+     */
+    cursor?: receiptWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` receipts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` receipts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of receipts.
+     */
+    distinct?: ReceiptScalarFieldEnum | ReceiptScalarFieldEnum[]
+  }
+
+  /**
+   * receipt findMany
+   */
+  export type receiptFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * Filter, which receipts to fetch.
+     */
+    where?: receiptWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of receipts to fetch.
+     */
+    orderBy?: receiptOrderByWithRelationInput | receiptOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing receipts.
+     */
+    cursor?: receiptWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` receipts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` receipts.
+     */
+    skip?: number
+    distinct?: ReceiptScalarFieldEnum | ReceiptScalarFieldEnum[]
+  }
+
+  /**
+   * receipt create
+   */
+  export type receiptCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * The data needed to create a receipt.
+     */
+    data: XOR<receiptCreateInput, receiptUncheckedCreateInput>
+  }
+
+  /**
+   * receipt createMany
+   */
+  export type receiptCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many receipts.
+     */
+    data: receiptCreateManyInput | receiptCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * receipt createManyAndReturn
+   */
+  export type receiptCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many receipts.
+     */
+    data: receiptCreateManyInput | receiptCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * receipt update
+   */
+  export type receiptUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * The data needed to update a receipt.
+     */
+    data: XOR<receiptUpdateInput, receiptUncheckedUpdateInput>
+    /**
+     * Choose, which receipt to update.
+     */
+    where: receiptWhereUniqueInput
+  }
+
+  /**
+   * receipt updateMany
+   */
+  export type receiptUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update receipts.
+     */
+    data: XOR<receiptUpdateManyMutationInput, receiptUncheckedUpdateManyInput>
+    /**
+     * Filter which receipts to update
+     */
+    where?: receiptWhereInput
+  }
+
+  /**
+   * receipt upsert
+   */
+  export type receiptUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * The filter to search for the receipt to update in case it exists.
+     */
+    where: receiptWhereUniqueInput
+    /**
+     * In case the receipt found by the `where` argument doesn't exist, create a new receipt with this data.
+     */
+    create: XOR<receiptCreateInput, receiptUncheckedCreateInput>
+    /**
+     * In case the receipt was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<receiptUpdateInput, receiptUncheckedUpdateInput>
+  }
+
+  /**
+   * receipt delete
+   */
+  export type receiptDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+    /**
+     * Filter which receipt to delete.
+     */
+    where: receiptWhereUniqueInput
+  }
+
+  /**
+   * receipt deleteMany
+   */
+  export type receiptDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which receipts to delete
+     */
+    where?: receiptWhereInput
+  }
+
+  /**
+   * receipt without action
+   */
+  export type receiptDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the receipt
+     */
+    select?: receiptSelect<ExtArgs> | null
+  }
+
+
+  /**
+   * Model auction
+   */
+
+  export type AggregateAuction = {
+    _count: AuctionCountAggregateOutputType | null
+    _avg: AuctionAvgAggregateOutputType | null
+    _sum: AuctionSumAggregateOutputType | null
+    _min: AuctionMinAggregateOutputType | null
+    _max: AuctionMaxAggregateOutputType | null
+  }
+
+  export type AuctionAvgAggregateOutputType = {
+    id: number | null
+    seller: number | null
+    itemId: number | null
+    price: number | null
+    tax: number | null
+  }
+
+  export type AuctionSumAggregateOutputType = {
+    id: bigint | null
+    seller: bigint | null
+    itemId: bigint | null
+    price: bigint | null
+    tax: bigint | null
+  }
+
+  export type AuctionMinAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    expiredAt: Date | null
+    seller: bigint | null
+    itemId: bigint | null
+    price: bigint | null
+    tax: bigint | null
+  }
+
+  export type AuctionMaxAggregateOutputType = {
+    id: bigint | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    expiredAt: Date | null
+    seller: bigint | null
+    itemId: bigint | null
+    price: bigint | null
+    tax: bigint | null
+  }
+
+  export type AuctionCountAggregateOutputType = {
+    id: number
+    createdAt: number
+    updatedAt: number
+    expiredAt: number
+    seller: number
+    itemId: number
+    price: number
+    tax: number
+    _all: number
+  }
+
+
+  export type AuctionAvgAggregateInputType = {
+    id?: true
+    seller?: true
+    itemId?: true
+    price?: true
+    tax?: true
+  }
+
+  export type AuctionSumAggregateInputType = {
+    id?: true
+    seller?: true
+    itemId?: true
+    price?: true
+    tax?: true
+  }
+
+  export type AuctionMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    expiredAt?: true
+    seller?: true
+    itemId?: true
+    price?: true
+    tax?: true
+  }
+
+  export type AuctionMaxAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    expiredAt?: true
+    seller?: true
+    itemId?: true
+    price?: true
+    tax?: true
+  }
+
+  export type AuctionCountAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    expiredAt?: true
+    seller?: true
+    itemId?: true
+    price?: true
+    tax?: true
+    _all?: true
+  }
+
+  export type AuctionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which auction to aggregate.
+     */
+    where?: auctionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of auctions to fetch.
+     */
+    orderBy?: auctionOrderByWithRelationInput | auctionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: auctionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` auctions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` auctions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned auctions
+    **/
+    _count?: true | AuctionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: AuctionAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: AuctionSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: AuctionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: AuctionMaxAggregateInputType
+  }
+
+  export type GetAuctionAggregateType<T extends AuctionAggregateArgs> = {
+        [P in keyof T & keyof AggregateAuction]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAuction[P]>
+      : GetScalarType<T[P], AggregateAuction[P]>
+  }
+
+
+
+
+  export type auctionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: auctionWhereInput
+    orderBy?: auctionOrderByWithAggregationInput | auctionOrderByWithAggregationInput[]
+    by: AuctionScalarFieldEnum[] | AuctionScalarFieldEnum
+    having?: auctionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: AuctionCountAggregateInputType | true
+    _avg?: AuctionAvgAggregateInputType
+    _sum?: AuctionSumAggregateInputType
+    _min?: AuctionMinAggregateInputType
+    _max?: AuctionMaxAggregateInputType
+  }
+
+  export type AuctionGroupByOutputType = {
+    id: bigint
+    createdAt: Date
+    updatedAt: Date
+    expiredAt: Date
+    seller: bigint
+    itemId: bigint
+    price: bigint
+    tax: bigint
+    _count: AuctionCountAggregateOutputType | null
+    _avg: AuctionAvgAggregateOutputType | null
+    _sum: AuctionSumAggregateOutputType | null
+    _min: AuctionMinAggregateOutputType | null
+    _max: AuctionMaxAggregateOutputType | null
+  }
+
+  type GetAuctionGroupByPayload<T extends auctionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<AuctionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof AuctionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], AuctionGroupByOutputType[P]>
+            : GetScalarType<T[P], AuctionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type auctionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    expiredAt?: boolean
+    seller?: boolean
+    itemId?: boolean
+    price?: boolean
+    tax?: boolean
+  }, ExtArgs["result"]["auction"]>
+
+  export type auctionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    expiredAt?: boolean
+    seller?: boolean
+    itemId?: boolean
+    price?: boolean
+    tax?: boolean
+  }, ExtArgs["result"]["auction"]>
+
+  export type auctionSelectScalar = {
+    id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    expiredAt?: boolean
+    seller?: boolean
+    itemId?: boolean
+    price?: boolean
+    tax?: boolean
+  }
+
+
+  export type $auctionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "auction"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: bigint
+      createdAt: Date
+      updatedAt: Date
+      expiredAt: Date
+      seller: bigint
+      itemId: bigint
+      price: bigint
+      tax: bigint
+    }, ExtArgs["result"]["auction"]>
+    composites: {}
+  }
+
+  type auctionGetPayload<S extends boolean | null | undefined | auctionDefaultArgs> = $Result.GetResult<Prisma.$auctionPayload, S>
+
+  type auctionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<auctionFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: AuctionCountAggregateInputType | true
+    }
+
+  export interface auctionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['auction'], meta: { name: 'auction' } }
+    /**
+     * Find zero or one Auction that matches the filter.
+     * @param {auctionFindUniqueArgs} args - Arguments to find a Auction
+     * @example
+     * // Get one Auction
+     * const auction = await prisma.auction.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends auctionFindUniqueArgs>(args: SelectSubset<T, auctionFindUniqueArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Auction that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {auctionFindUniqueOrThrowArgs} args - Arguments to find a Auction
+     * @example
+     * // Get one Auction
+     * const auction = await prisma.auction.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends auctionFindUniqueOrThrowArgs>(args: SelectSubset<T, auctionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Auction that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {auctionFindFirstArgs} args - Arguments to find a Auction
+     * @example
+     * // Get one Auction
+     * const auction = await prisma.auction.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends auctionFindFirstArgs>(args?: SelectSubset<T, auctionFindFirstArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Auction that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {auctionFindFirstOrThrowArgs} args - Arguments to find a Auction
+     * @example
+     * // Get one Auction
+     * const auction = await prisma.auction.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends auctionFindFirstOrThrowArgs>(args?: SelectSubset<T, auctionFindFirstOrThrowArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Auctions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {auctionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Auctions
+     * const auctions = await prisma.auction.findMany()
+     * 
+     * // Get first 10 Auctions
+     * const auctions = await prisma.auction.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const auctionWithIdOnly = await prisma.auction.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends auctionFindManyArgs>(args?: SelectSubset<T, auctionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Auction.
+     * @param {auctionCreateArgs} args - Arguments to create a Auction.
+     * @example
+     * // Create one Auction
+     * const Auction = await prisma.auction.create({
+     *   data: {
+     *     // ... data to create a Auction
+     *   }
+     * })
+     * 
+     */
+    create<T extends auctionCreateArgs>(args: SelectSubset<T, auctionCreateArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Auctions.
+     * @param {auctionCreateManyArgs} args - Arguments to create many Auctions.
+     * @example
+     * // Create many Auctions
+     * const auction = await prisma.auction.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends auctionCreateManyArgs>(args?: SelectSubset<T, auctionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Auctions and returns the data saved in the database.
+     * @param {auctionCreateManyAndReturnArgs} args - Arguments to create many Auctions.
+     * @example
+     * // Create many Auctions
+     * const auction = await prisma.auction.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Auctions and only return the `id`
+     * const auctionWithIdOnly = await prisma.auction.createManyAndReturn({ 
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends auctionCreateManyAndReturnArgs>(args?: SelectSubset<T, auctionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "createManyAndReturn">>
+
+    /**
+     * Delete a Auction.
+     * @param {auctionDeleteArgs} args - Arguments to delete one Auction.
+     * @example
+     * // Delete one Auction
+     * const Auction = await prisma.auction.delete({
+     *   where: {
+     *     // ... filter to delete one Auction
+     *   }
+     * })
+     * 
+     */
+    delete<T extends auctionDeleteArgs>(args: SelectSubset<T, auctionDeleteArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Auction.
+     * @param {auctionUpdateArgs} args - Arguments to update one Auction.
+     * @example
+     * // Update one Auction
+     * const auction = await prisma.auction.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends auctionUpdateArgs>(args: SelectSubset<T, auctionUpdateArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Auctions.
+     * @param {auctionDeleteManyArgs} args - Arguments to filter Auctions to delete.
+     * @example
+     * // Delete a few Auctions
+     * const { count } = await prisma.auction.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends auctionDeleteManyArgs>(args?: SelectSubset<T, auctionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Auctions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {auctionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Auctions
+     * const auction = await prisma.auction.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends auctionUpdateManyArgs>(args: SelectSubset<T, auctionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Auction.
+     * @param {auctionUpsertArgs} args - Arguments to update or create a Auction.
+     * @example
+     * // Update or create a Auction
+     * const auction = await prisma.auction.upsert({
+     *   create: {
+     *     // ... data to create a Auction
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Auction we want to update
+     *   }
+     * })
+     */
+    upsert<T extends auctionUpsertArgs>(args: SelectSubset<T, auctionUpsertArgs<ExtArgs>>): Prisma__auctionClient<$Result.GetResult<Prisma.$auctionPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Auctions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {auctionCountArgs} args - Arguments to filter Auctions to count.
+     * @example
+     * // Count the number of Auctions
+     * const count = await prisma.auction.count({
+     *   where: {
+     *     // ... the filter for the Auctions we want to count
+     *   }
+     * })
+    **/
+    count<T extends auctionCountArgs>(
+      args?: Subset<T, auctionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], AuctionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Auction.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AuctionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends AuctionAggregateArgs>(args: Subset<T, AuctionAggregateArgs>): Prisma.PrismaPromise<GetAuctionAggregateType<T>>
+
+    /**
+     * Group by Auction.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {auctionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends auctionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: auctionGroupByArgs['orderBy'] }
+        : { orderBy?: auctionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, auctionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAuctionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the auction model
+   */
+  readonly fields: auctionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for auction.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__auctionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the auction model
+   */ 
+  interface auctionFieldRefs {
+    readonly id: FieldRef<"auction", 'BigInt'>
+    readonly createdAt: FieldRef<"auction", 'DateTime'>
+    readonly updatedAt: FieldRef<"auction", 'DateTime'>
+    readonly expiredAt: FieldRef<"auction", 'DateTime'>
+    readonly seller: FieldRef<"auction", 'BigInt'>
+    readonly itemId: FieldRef<"auction", 'BigInt'>
+    readonly price: FieldRef<"auction", 'BigInt'>
+    readonly tax: FieldRef<"auction", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * auction findUnique
+   */
+  export type auctionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * Filter, which auction to fetch.
+     */
+    where: auctionWhereUniqueInput
+  }
+
+  /**
+   * auction findUniqueOrThrow
+   */
+  export type auctionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * Filter, which auction to fetch.
+     */
+    where: auctionWhereUniqueInput
+  }
+
+  /**
+   * auction findFirst
+   */
+  export type auctionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * Filter, which auction to fetch.
+     */
+    where?: auctionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of auctions to fetch.
+     */
+    orderBy?: auctionOrderByWithRelationInput | auctionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for auctions.
+     */
+    cursor?: auctionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` auctions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` auctions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of auctions.
+     */
+    distinct?: AuctionScalarFieldEnum | AuctionScalarFieldEnum[]
+  }
+
+  /**
+   * auction findFirstOrThrow
+   */
+  export type auctionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * Filter, which auction to fetch.
+     */
+    where?: auctionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of auctions to fetch.
+     */
+    orderBy?: auctionOrderByWithRelationInput | auctionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for auctions.
+     */
+    cursor?: auctionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` auctions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` auctions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of auctions.
+     */
+    distinct?: AuctionScalarFieldEnum | AuctionScalarFieldEnum[]
+  }
+
+  /**
+   * auction findMany
+   */
+  export type auctionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * Filter, which auctions to fetch.
+     */
+    where?: auctionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of auctions to fetch.
+     */
+    orderBy?: auctionOrderByWithRelationInput | auctionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing auctions.
+     */
+    cursor?: auctionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` auctions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` auctions.
+     */
+    skip?: number
+    distinct?: AuctionScalarFieldEnum | AuctionScalarFieldEnum[]
+  }
+
+  /**
+   * auction create
+   */
+  export type auctionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * The data needed to create a auction.
+     */
+    data: XOR<auctionCreateInput, auctionUncheckedCreateInput>
+  }
+
+  /**
+   * auction createMany
+   */
+  export type auctionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many auctions.
+     */
+    data: auctionCreateManyInput | auctionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * auction createManyAndReturn
+   */
+  export type auctionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * The data used to create many auctions.
+     */
+    data: auctionCreateManyInput | auctionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * auction update
+   */
+  export type auctionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * The data needed to update a auction.
+     */
+    data: XOR<auctionUpdateInput, auctionUncheckedUpdateInput>
+    /**
+     * Choose, which auction to update.
+     */
+    where: auctionWhereUniqueInput
+  }
+
+  /**
+   * auction updateMany
+   */
+  export type auctionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update auctions.
+     */
+    data: XOR<auctionUpdateManyMutationInput, auctionUncheckedUpdateManyInput>
+    /**
+     * Filter which auctions to update
+     */
+    where?: auctionWhereInput
+  }
+
+  /**
+   * auction upsert
+   */
+  export type auctionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * The filter to search for the auction to update in case it exists.
+     */
+    where: auctionWhereUniqueInput
+    /**
+     * In case the auction found by the `where` argument doesn't exist, create a new auction with this data.
+     */
+    create: XOR<auctionCreateInput, auctionUncheckedCreateInput>
+    /**
+     * In case the auction was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<auctionUpdateInput, auctionUncheckedUpdateInput>
+  }
+
+  /**
+   * auction delete
+   */
+  export type auctionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+    /**
+     * Filter which auction to delete.
+     */
+    where: auctionWhereUniqueInput
+  }
+
+  /**
+   * auction deleteMany
+   */
+  export type auctionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which auctions to delete
+     */
+    where?: auctionWhereInput
+  }
+
+  /**
+   * auction without action
+   */
+  export type auctionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the auction
+     */
+    select?: auctionSelect<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -2874,10 +6974,59 @@ export namespace Prisma {
     updatedAt: 'updatedAt',
     userId: 'userId',
     slotSize: 'slotSize',
-    items: 'items'
+    level: 'level'
   };
 
   export type InventoryScalarFieldEnum = (typeof InventoryScalarFieldEnum)[keyof typeof InventoryScalarFieldEnum]
+
+
+  export const DucksScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    userId: 'userId',
+    name: 'name',
+    image: 'image',
+    price: 'price'
+  };
+
+  export type DucksScalarFieldEnum = (typeof DucksScalarFieldEnum)[keyof typeof DucksScalarFieldEnum]
+
+
+  export const TradeScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    auctionId: 'auctionId',
+    receiver: 'receiver'
+  };
+
+  export type TradeScalarFieldEnum = (typeof TradeScalarFieldEnum)[keyof typeof TradeScalarFieldEnum]
+
+
+  export const ReceiptScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    tradeId: 'tradeId',
+    status: 'status'
+  };
+
+  export type ReceiptScalarFieldEnum = (typeof ReceiptScalarFieldEnum)[keyof typeof ReceiptScalarFieldEnum]
+
+
+  export const AuctionScalarFieldEnum: {
+    id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    expiredAt: 'expiredAt',
+    seller: 'seller',
+    itemId: 'itemId',
+    price: 'price',
+    tax: 'tax'
+  };
+
+  export type AuctionScalarFieldEnum = (typeof AuctionScalarFieldEnum)[keyof typeof AuctionScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -2888,13 +7037,6 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const JsonNullValueInput: {
-    JsonNull: typeof JsonNull
-  };
-
-  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
-
-
   export const QueryMode: {
     default: 'default',
     insensitive: 'insensitive'
@@ -2903,13 +7045,12 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
-  export const JsonNullValueFilter: {
-    DbNull: typeof DbNull,
-    JsonNull: typeof JsonNull,
-    AnyNull: typeof AnyNull
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
   };
 
-  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -2918,16 +7059,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
+   * Reference to a field of type 'BigInt'
    */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
     
 
 
   /**
-   * Reference to a field of type 'Int[]'
+   * Reference to a field of type 'BigInt[]'
    */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
     
 
 
@@ -2967,9 +7108,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Json'
+   * Reference to a field of type 'Int'
    */
-  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
 
 
@@ -2994,7 +7142,7 @@ export namespace Prisma {
     AND?: duckUserWhereInput | duckUserWhereInput[]
     OR?: duckUserWhereInput[]
     NOT?: duckUserWhereInput | duckUserWhereInput[]
-    id?: IntFilter<"duckUser"> | number
+    id?: BigIntFilter<"duckUser"> | bigint | number
     createdAt?: DateTimeFilter<"duckUser"> | Date | string
     updatedAt?: DateTimeFilter<"duckUser"> | Date | string
     lastLogin?: DateTimeFilter<"duckUser"> | Date | string
@@ -3016,7 +7164,7 @@ export namespace Prisma {
   }
 
   export type duckUserWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: bigint | number
     email?: string
     AND?: duckUserWhereInput | duckUserWhereInput[]
     OR?: duckUserWhereInput[]
@@ -3049,7 +7197,7 @@ export namespace Prisma {
     AND?: duckUserScalarWhereWithAggregatesInput | duckUserScalarWhereWithAggregatesInput[]
     OR?: duckUserScalarWhereWithAggregatesInput[]
     NOT?: duckUserScalarWhereWithAggregatesInput | duckUserScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"duckUser"> | number
+    id?: BigIntWithAggregatesFilter<"duckUser"> | bigint | number
     createdAt?: DateTimeWithAggregatesFilter<"duckUser"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"duckUser"> | Date | string
     lastLogin?: DateTimeWithAggregatesFilter<"duckUser"> | Date | string
@@ -3063,12 +7211,12 @@ export namespace Prisma {
     AND?: inventoryWhereInput | inventoryWhereInput[]
     OR?: inventoryWhereInput[]
     NOT?: inventoryWhereInput | inventoryWhereInput[]
-    id?: IntFilter<"inventory"> | number
+    id?: BigIntFilter<"inventory"> | bigint | number
     createdAt?: DateTimeFilter<"inventory"> | Date | string
     updatedAt?: DateTimeFilter<"inventory"> | Date | string
-    userId?: IntFilter<"inventory"> | number
+    userId?: BigIntFilter<"inventory"> | bigint | number
     slotSize?: IntFilter<"inventory"> | number
-    items?: JsonFilter<"inventory">
+    level?: IntFilter<"inventory"> | number
   }
 
   export type inventoryOrderByWithRelationInput = {
@@ -3077,19 +7225,19 @@ export namespace Prisma {
     updatedAt?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
-    items?: SortOrder
+    level?: SortOrder
   }
 
   export type inventoryWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    userId?: number
+    id?: bigint | number
+    userId?: bigint | number
     AND?: inventoryWhereInput | inventoryWhereInput[]
     OR?: inventoryWhereInput[]
     NOT?: inventoryWhereInput | inventoryWhereInput[]
     createdAt?: DateTimeFilter<"inventory"> | Date | string
     updatedAt?: DateTimeFilter<"inventory"> | Date | string
     slotSize?: IntFilter<"inventory"> | number
-    items?: JsonFilter<"inventory">
+    level?: IntFilter<"inventory"> | number
   }, "id" | "userId">
 
   export type inventoryOrderByWithAggregationInput = {
@@ -3098,7 +7246,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
-    items?: SortOrder
+    level?: SortOrder
     _count?: inventoryCountOrderByAggregateInput
     _avg?: inventoryAvgOrderByAggregateInput
     _max?: inventoryMaxOrderByAggregateInput
@@ -3110,36 +7258,279 @@ export namespace Prisma {
     AND?: inventoryScalarWhereWithAggregatesInput | inventoryScalarWhereWithAggregatesInput[]
     OR?: inventoryScalarWhereWithAggregatesInput[]
     NOT?: inventoryScalarWhereWithAggregatesInput | inventoryScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"inventory"> | number
+    id?: BigIntWithAggregatesFilter<"inventory"> | bigint | number
     createdAt?: DateTimeWithAggregatesFilter<"inventory"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"inventory"> | Date | string
-    userId?: IntWithAggregatesFilter<"inventory"> | number
+    userId?: BigIntWithAggregatesFilter<"inventory"> | bigint | number
     slotSize?: IntWithAggregatesFilter<"inventory"> | number
-    items?: JsonWithAggregatesFilter<"inventory">
+    level?: IntWithAggregatesFilter<"inventory"> | number
+  }
+
+  export type ducksWhereInput = {
+    AND?: ducksWhereInput | ducksWhereInput[]
+    OR?: ducksWhereInput[]
+    NOT?: ducksWhereInput | ducksWhereInput[]
+    id?: BigIntFilter<"ducks"> | bigint | number
+    createdAt?: DateTimeFilter<"ducks"> | Date | string
+    updatedAt?: DateTimeFilter<"ducks"> | Date | string
+    userId?: BigIntNullableFilter<"ducks"> | bigint | number | null
+    name?: StringFilter<"ducks"> | string
+    image?: StringFilter<"ducks"> | string
+    price?: BigIntFilter<"ducks"> | bigint | number
+  }
+
+  export type ducksOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrderInput | SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+  }
+
+  export type ducksWhereUniqueInput = Prisma.AtLeast<{
+    id?: bigint | number
+    AND?: ducksWhereInput | ducksWhereInput[]
+    OR?: ducksWhereInput[]
+    NOT?: ducksWhereInput | ducksWhereInput[]
+    createdAt?: DateTimeFilter<"ducks"> | Date | string
+    updatedAt?: DateTimeFilter<"ducks"> | Date | string
+    userId?: BigIntNullableFilter<"ducks"> | bigint | number | null
+    name?: StringFilter<"ducks"> | string
+    image?: StringFilter<"ducks"> | string
+    price?: BigIntFilter<"ducks"> | bigint | number
+  }, "id">
+
+  export type ducksOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrderInput | SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+    _count?: ducksCountOrderByAggregateInput
+    _avg?: ducksAvgOrderByAggregateInput
+    _max?: ducksMaxOrderByAggregateInput
+    _min?: ducksMinOrderByAggregateInput
+    _sum?: ducksSumOrderByAggregateInput
+  }
+
+  export type ducksScalarWhereWithAggregatesInput = {
+    AND?: ducksScalarWhereWithAggregatesInput | ducksScalarWhereWithAggregatesInput[]
+    OR?: ducksScalarWhereWithAggregatesInput[]
+    NOT?: ducksScalarWhereWithAggregatesInput | ducksScalarWhereWithAggregatesInput[]
+    id?: BigIntWithAggregatesFilter<"ducks"> | bigint | number
+    createdAt?: DateTimeWithAggregatesFilter<"ducks"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ducks"> | Date | string
+    userId?: BigIntNullableWithAggregatesFilter<"ducks"> | bigint | number | null
+    name?: StringWithAggregatesFilter<"ducks"> | string
+    image?: StringWithAggregatesFilter<"ducks"> | string
+    price?: BigIntWithAggregatesFilter<"ducks"> | bigint | number
+  }
+
+  export type tradeWhereInput = {
+    AND?: tradeWhereInput | tradeWhereInput[]
+    OR?: tradeWhereInput[]
+    NOT?: tradeWhereInput | tradeWhereInput[]
+    id?: BigIntFilter<"trade"> | bigint | number
+    createdAt?: DateTimeFilter<"trade"> | Date | string
+    updatedAt?: DateTimeFilter<"trade"> | Date | string
+    auctionId?: BigIntFilter<"trade"> | bigint | number
+    receiver?: BigIntFilter<"trade"> | bigint | number
+  }
+
+  export type tradeOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+  }
+
+  export type tradeWhereUniqueInput = Prisma.AtLeast<{
+    id?: bigint | number
+    AND?: tradeWhereInput | tradeWhereInput[]
+    OR?: tradeWhereInput[]
+    NOT?: tradeWhereInput | tradeWhereInput[]
+    createdAt?: DateTimeFilter<"trade"> | Date | string
+    updatedAt?: DateTimeFilter<"trade"> | Date | string
+    auctionId?: BigIntFilter<"trade"> | bigint | number
+    receiver?: BigIntFilter<"trade"> | bigint | number
+  }, "id">
+
+  export type tradeOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+    _count?: tradeCountOrderByAggregateInput
+    _avg?: tradeAvgOrderByAggregateInput
+    _max?: tradeMaxOrderByAggregateInput
+    _min?: tradeMinOrderByAggregateInput
+    _sum?: tradeSumOrderByAggregateInput
+  }
+
+  export type tradeScalarWhereWithAggregatesInput = {
+    AND?: tradeScalarWhereWithAggregatesInput | tradeScalarWhereWithAggregatesInput[]
+    OR?: tradeScalarWhereWithAggregatesInput[]
+    NOT?: tradeScalarWhereWithAggregatesInput | tradeScalarWhereWithAggregatesInput[]
+    id?: BigIntWithAggregatesFilter<"trade"> | bigint | number
+    createdAt?: DateTimeWithAggregatesFilter<"trade"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"trade"> | Date | string
+    auctionId?: BigIntWithAggregatesFilter<"trade"> | bigint | number
+    receiver?: BigIntWithAggregatesFilter<"trade"> | bigint | number
+  }
+
+  export type receiptWhereInput = {
+    AND?: receiptWhereInput | receiptWhereInput[]
+    OR?: receiptWhereInput[]
+    NOT?: receiptWhereInput | receiptWhereInput[]
+    id?: BigIntFilter<"receipt"> | bigint | number
+    createdAt?: DateTimeFilter<"receipt"> | Date | string
+    updatedAt?: DateTimeFilter<"receipt"> | Date | string
+    tradeId?: BigIntFilter<"receipt"> | bigint | number
+    status?: IntFilter<"receipt"> | number
+  }
+
+  export type receiptOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+  }
+
+  export type receiptWhereUniqueInput = Prisma.AtLeast<{
+    id?: bigint | number
+    AND?: receiptWhereInput | receiptWhereInput[]
+    OR?: receiptWhereInput[]
+    NOT?: receiptWhereInput | receiptWhereInput[]
+    createdAt?: DateTimeFilter<"receipt"> | Date | string
+    updatedAt?: DateTimeFilter<"receipt"> | Date | string
+    tradeId?: BigIntFilter<"receipt"> | bigint | number
+    status?: IntFilter<"receipt"> | number
+  }, "id">
+
+  export type receiptOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+    _count?: receiptCountOrderByAggregateInput
+    _avg?: receiptAvgOrderByAggregateInput
+    _max?: receiptMaxOrderByAggregateInput
+    _min?: receiptMinOrderByAggregateInput
+    _sum?: receiptSumOrderByAggregateInput
+  }
+
+  export type receiptScalarWhereWithAggregatesInput = {
+    AND?: receiptScalarWhereWithAggregatesInput | receiptScalarWhereWithAggregatesInput[]
+    OR?: receiptScalarWhereWithAggregatesInput[]
+    NOT?: receiptScalarWhereWithAggregatesInput | receiptScalarWhereWithAggregatesInput[]
+    id?: BigIntWithAggregatesFilter<"receipt"> | bigint | number
+    createdAt?: DateTimeWithAggregatesFilter<"receipt"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"receipt"> | Date | string
+    tradeId?: BigIntWithAggregatesFilter<"receipt"> | bigint | number
+    status?: IntWithAggregatesFilter<"receipt"> | number
+  }
+
+  export type auctionWhereInput = {
+    AND?: auctionWhereInput | auctionWhereInput[]
+    OR?: auctionWhereInput[]
+    NOT?: auctionWhereInput | auctionWhereInput[]
+    id?: BigIntFilter<"auction"> | bigint | number
+    createdAt?: DateTimeFilter<"auction"> | Date | string
+    updatedAt?: DateTimeFilter<"auction"> | Date | string
+    expiredAt?: DateTimeFilter<"auction"> | Date | string
+    seller?: BigIntFilter<"auction"> | bigint | number
+    itemId?: BigIntFilter<"auction"> | bigint | number
+    price?: BigIntFilter<"auction"> | bigint | number
+    tax?: BigIntFilter<"auction"> | bigint | number
+  }
+
+  export type auctionOrderByWithRelationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    expiredAt?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+  }
+
+  export type auctionWhereUniqueInput = Prisma.AtLeast<{
+    id?: bigint | number
+    AND?: auctionWhereInput | auctionWhereInput[]
+    OR?: auctionWhereInput[]
+    NOT?: auctionWhereInput | auctionWhereInput[]
+    createdAt?: DateTimeFilter<"auction"> | Date | string
+    updatedAt?: DateTimeFilter<"auction"> | Date | string
+    expiredAt?: DateTimeFilter<"auction"> | Date | string
+    seller?: BigIntFilter<"auction"> | bigint | number
+    itemId?: BigIntFilter<"auction"> | bigint | number
+    price?: BigIntFilter<"auction"> | bigint | number
+    tax?: BigIntFilter<"auction"> | bigint | number
+  }, "id">
+
+  export type auctionOrderByWithAggregationInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    expiredAt?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+    _count?: auctionCountOrderByAggregateInput
+    _avg?: auctionAvgOrderByAggregateInput
+    _max?: auctionMaxOrderByAggregateInput
+    _min?: auctionMinOrderByAggregateInput
+    _sum?: auctionSumOrderByAggregateInput
+  }
+
+  export type auctionScalarWhereWithAggregatesInput = {
+    AND?: auctionScalarWhereWithAggregatesInput | auctionScalarWhereWithAggregatesInput[]
+    OR?: auctionScalarWhereWithAggregatesInput[]
+    NOT?: auctionScalarWhereWithAggregatesInput | auctionScalarWhereWithAggregatesInput[]
+    id?: BigIntWithAggregatesFilter<"auction"> | bigint | number
+    createdAt?: DateTimeWithAggregatesFilter<"auction"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"auction"> | Date | string
+    expiredAt?: DateTimeWithAggregatesFilter<"auction"> | Date | string
+    seller?: BigIntWithAggregatesFilter<"auction"> | bigint | number
+    itemId?: BigIntWithAggregatesFilter<"auction"> | bigint | number
+    price?: BigIntWithAggregatesFilter<"auction"> | bigint | number
+    tax?: BigIntWithAggregatesFilter<"auction"> | bigint | number
   }
 
   export type duckUserCreateInput = {
+    id?: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string
-    name: string
-    email: string
-    password: string
+    name?: string
+    email?: string
+    password?: string
     isDeleted?: boolean
   }
 
   export type duckUserUncheckedCreateInput = {
-    id?: number
+    id?: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string
-    name: string
-    email: string
-    password: string
+    name?: string
+    email?: string
+    password?: string
     isDeleted?: boolean
   }
 
   export type duckUserUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3150,7 +7541,7 @@ export namespace Prisma {
   }
 
   export type duckUserUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3161,17 +7552,18 @@ export namespace Prisma {
   }
 
   export type duckUserCreateManyInput = {
-    id?: number
+    id?: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string
-    name: string
-    email: string
-    password: string
+    name?: string
+    email?: string
+    password?: string
     isDeleted?: boolean
   }
 
   export type duckUserUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3182,7 +7574,7 @@ export namespace Prisma {
   }
 
   export type duckUserUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3193,74 +7585,336 @@ export namespace Prisma {
   }
 
   export type inventoryCreateInput = {
+    id?: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: number
+    userId: bigint | number
     slotSize?: number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: number
   }
 
   export type inventoryUncheckedCreateInput = {
-    id?: number
+    id?: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: number
+    userId: bigint | number
     slotSize?: number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: number
   }
 
   export type inventoryUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: BigIntFieldUpdateOperationsInput | bigint | number
     slotSize?: IntFieldUpdateOperationsInput | number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: IntFieldUpdateOperationsInput | number
   }
 
   export type inventoryUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: BigIntFieldUpdateOperationsInput | bigint | number
     slotSize?: IntFieldUpdateOperationsInput | number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: IntFieldUpdateOperationsInput | number
   }
 
   export type inventoryCreateManyInput = {
-    id?: number
+    id?: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
-    userId: number
+    userId: bigint | number
     slotSize?: number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: number
   }
 
   export type inventoryUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: BigIntFieldUpdateOperationsInput | bigint | number
     slotSize?: IntFieldUpdateOperationsInput | number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: IntFieldUpdateOperationsInput | number
   }
 
   export type inventoryUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: IntFieldUpdateOperationsInput | number
+    userId?: BigIntFieldUpdateOperationsInput | bigint | number
     slotSize?: IntFieldUpdateOperationsInput | number
-    items?: JsonNullValueInput | InputJsonValue
+    level?: IntFieldUpdateOperationsInput | number
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+  export type ducksCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId?: bigint | number | null
+    name?: string
+    image?: string
+    price?: bigint | number
+  }
+
+  export type ducksUncheckedCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId?: bigint | number | null
+    name?: string
+    image?: string
+    price?: bigint | number
+  }
+
+  export type ducksUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type ducksUncheckedUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type ducksCreateManyInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId?: bigint | number | null
+    name?: string
+    image?: string
+    price?: bigint | number
+  }
+
+  export type ducksUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type ducksUncheckedUpdateManyInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    name?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type tradeCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    auctionId: bigint | number
+    receiver: bigint | number
+  }
+
+  export type tradeUncheckedCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    auctionId: bigint | number
+    receiver: bigint | number
+  }
+
+  export type tradeUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auctionId?: BigIntFieldUpdateOperationsInput | bigint | number
+    receiver?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type tradeUncheckedUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auctionId?: BigIntFieldUpdateOperationsInput | bigint | number
+    receiver?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type tradeCreateManyInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    auctionId: bigint | number
+    receiver: bigint | number
+  }
+
+  export type tradeUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auctionId?: BigIntFieldUpdateOperationsInput | bigint | number
+    receiver?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type tradeUncheckedUpdateManyInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auctionId?: BigIntFieldUpdateOperationsInput | bigint | number
+    receiver?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type receiptCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    tradeId: bigint | number
+    status?: number
+  }
+
+  export type receiptUncheckedCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    tradeId: bigint | number
+    status?: number
+  }
+
+  export type receiptUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tradeId?: BigIntFieldUpdateOperationsInput | bigint | number
+    status?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type receiptUncheckedUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tradeId?: BigIntFieldUpdateOperationsInput | bigint | number
+    status?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type receiptCreateManyInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    tradeId: bigint | number
+    status?: number
+  }
+
+  export type receiptUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tradeId?: BigIntFieldUpdateOperationsInput | bigint | number
+    status?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type receiptUncheckedUpdateManyInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tradeId?: BigIntFieldUpdateOperationsInput | bigint | number
+    status?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type auctionCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    expiredAt?: Date | string
+    seller: bigint | number
+    itemId: bigint | number
+    price: bigint | number
+    tax: bigint | number
+  }
+
+  export type auctionUncheckedCreateInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    expiredAt?: Date | string
+    seller: bigint | number
+    itemId: bigint | number
+    price: bigint | number
+    tax: bigint | number
+  }
+
+  export type auctionUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    expiredAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    seller?: BigIntFieldUpdateOperationsInput | bigint | number
+    itemId?: BigIntFieldUpdateOperationsInput | bigint | number
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+    tax?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type auctionUncheckedUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    expiredAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    seller?: BigIntFieldUpdateOperationsInput | bigint | number
+    itemId?: BigIntFieldUpdateOperationsInput | bigint | number
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+    tax?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type auctionCreateManyInput = {
+    id?: bigint | number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    expiredAt?: Date | string
+    seller: bigint | number
+    itemId: bigint | number
+    price: bigint | number
+    tax: bigint | number
+  }
+
+  export type auctionUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    expiredAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    seller?: BigIntFieldUpdateOperationsInput | bigint | number
+    itemId?: BigIntFieldUpdateOperationsInput | bigint | number
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+    tax?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type auctionUncheckedUpdateManyInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    expiredAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    seller?: BigIntFieldUpdateOperationsInput | bigint | number
+    itemId?: BigIntFieldUpdateOperationsInput | bigint | number
+    price?: BigIntFieldUpdateOperationsInput | bigint | number
+    tax?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type BigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -3335,20 +7989,20 @@ export namespace Prisma {
     id?: SortOrder
   }
 
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+  export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
     _count?: NestedIntFilter<$PrismaModel>
     _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -3390,27 +8044,16 @@ export namespace Prisma {
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
   }
-  export type JsonFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
 
-  export type JsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type inventoryCountOrderByAggregateInput = {
@@ -3419,13 +8062,14 @@ export namespace Prisma {
     updatedAt?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
-    items?: SortOrder
+    level?: SortOrder
   }
 
   export type inventoryAvgOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
+    level?: SortOrder
   }
 
   export type inventoryMaxOrderByAggregateInput = {
@@ -3434,6 +8078,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
+    level?: SortOrder
   }
 
   export type inventoryMinOrderByAggregateInput = {
@@ -3442,37 +8087,233 @@ export namespace Prisma {
     updatedAt?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
+    level?: SortOrder
   }
 
   export type inventorySumOrderByAggregateInput = {
     id?: SortOrder
     userId?: SortOrder
     slotSize?: SortOrder
+    level?: SortOrder
   }
-  export type JsonWithAggregatesFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
 
-  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedJsonFilter<$PrismaModel>
-    _max?: NestedJsonFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type BigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type ducksCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+  }
+
+  export type ducksAvgOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    price?: SortOrder
+  }
+
+  export type ducksMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+  }
+
+  export type ducksMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    name?: SortOrder
+    image?: SortOrder
+    price?: SortOrder
+  }
+
+  export type ducksSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    price?: SortOrder
+  }
+
+  export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>
+    _min?: NestedBigIntNullableFilter<$PrismaModel>
+    _max?: NestedBigIntNullableFilter<$PrismaModel>
+  }
+
+  export type tradeCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+  }
+
+  export type tradeAvgOrderByAggregateInput = {
+    id?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+  }
+
+  export type tradeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+  }
+
+  export type tradeMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+  }
+
+  export type tradeSumOrderByAggregateInput = {
+    id?: SortOrder
+    auctionId?: SortOrder
+    receiver?: SortOrder
+  }
+
+  export type receiptCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+  }
+
+  export type receiptAvgOrderByAggregateInput = {
+    id?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+  }
+
+  export type receiptMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+  }
+
+  export type receiptMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+  }
+
+  export type receiptSumOrderByAggregateInput = {
+    id?: SortOrder
+    tradeId?: SortOrder
+    status?: SortOrder
+  }
+
+  export type auctionCountOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    expiredAt?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+  }
+
+  export type auctionAvgOrderByAggregateInput = {
+    id?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+  }
+
+  export type auctionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    expiredAt?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+  }
+
+  export type auctionMinOrderByAggregateInput = {
+    id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    expiredAt?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+  }
+
+  export type auctionSumOrderByAggregateInput = {
+    id?: SortOrder
+    seller?: SortOrder
+    itemId?: SortOrder
+    price?: SortOrder
+    tax?: SortOrder
+  }
+
+  export type BigIntFieldUpdateOperationsInput = {
+    set?: bigint | number
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -3495,15 +8336,23 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+  export type NullableBigIntFieldUpdateOperationsInput = {
+    set?: bigint | number | null
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
+  }
+
+  export type NestedBigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -3536,7 +8385,23 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+  export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -3544,12 +8409,7 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedFloatFilter<$PrismaModel = never> = {
@@ -3601,27 +8461,70 @@ export namespace Prisma {
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
   }
-  export type NestedJsonFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<NestedJsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
 
-  export type NestedJsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedBigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
+  }
+
+  export type NestedBigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>
+    _min?: NestedBigIntNullableFilter<$PrismaModel>
+    _max?: NestedBigIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
 
@@ -3637,6 +8540,22 @@ export namespace Prisma {
      * @deprecated Use inventoryDefaultArgs instead
      */
     export type inventoryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = inventoryDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use ducksDefaultArgs instead
+     */
+    export type ducksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ducksDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use tradeDefaultArgs instead
+     */
+    export type tradeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = tradeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use receiptDefaultArgs instead
+     */
+    export type receiptArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = receiptDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use auctionDefaultArgs instead
+     */
+    export type auctionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = auctionDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

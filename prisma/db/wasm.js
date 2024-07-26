@@ -136,7 +136,44 @@ exports.Prisma.InventoryScalarFieldEnum = {
   updatedAt: 'updatedAt',
   userId: 'userId',
   slotSize: 'slotSize',
-  items: 'items'
+  level: 'level'
+};
+
+exports.Prisma.DucksScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  name: 'name',
+  image: 'image',
+  price: 'price'
+};
+
+exports.Prisma.TradeScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  auctionId: 'auctionId',
+  receiver: 'receiver'
+};
+
+exports.Prisma.ReceiptScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  tradeId: 'tradeId',
+  status: 'status'
+};
+
+exports.Prisma.AuctionScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  expiredAt: 'expiredAt',
+  seller: 'seller',
+  itemId: 'itemId',
+  price: 'price',
+  tax: 'tax'
 };
 
 exports.Prisma.SortOrder = {
@@ -144,25 +181,24 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.JsonNullValueInput = {
-  JsonNull: Prisma.JsonNull
-};
-
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
 
-exports.Prisma.JsonNullValueFilter = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull,
-  AnyNull: Prisma.AnyNull
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 
 exports.Prisma.ModelName = {
   duckUser: 'duckUser',
-  inventory: 'inventory'
+  inventory: 'inventory',
+  ducks: 'ducks',
+  trade: 'trade',
+  receipt: 'receipt',
+  auction: 'auction'
 };
 
 /**
