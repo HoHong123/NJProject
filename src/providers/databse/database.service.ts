@@ -47,4 +47,8 @@ export class DatabaseService
     async disconnect() {
         await this.$disconnect();
     }
+
+    // get duckUser() {
+    //     return this.user; // Prisma 클라이언트의 'user' 모델을 반환
+    // }
 }
