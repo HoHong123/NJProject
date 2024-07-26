@@ -7,18 +7,50 @@ export class UserEntity {
     ) {}
 }
 
-export class EmailLoginEntity {
+export class SessionLoginEntity {
     constructor(
-        public email: string,
-        public password: string
+        public cachedId: string
     ) {}
+
+    isValid() : boolean {
+        //const ret = (this.cachedId.length == 36)
+        //return ret;
+        return true;
+    }
 }
 
-export class EmailSignupEntity {
+class Email {
     constructor(
         public email: string,
         public password: string
     ) {}
+
+    isValid() : boolean {
+        const ret = (
+            this.email && (this.email.length > 5 && this.email.length < 65) &&
+            this.password && (this.password.length > 0 && this.password.length < 33)
+        )
+        return ret;
+    }
+}
+
+export class EmailLoginEntity extends Email {
+    constructor(
+        public email: string,
+        public password: string
+    ) {
+        super(email, password)
+    }
+}
+
+export class EmailSignupEntity extends Email {
+    constructor(
+        public name: string,
+        public email: string,
+        public password: string
+    ) {
+        super(email, password)
+    }
 }
 
 export class EmailUpdateEntity {
@@ -29,7 +61,7 @@ export class EmailUpdateEntity {
 
 export class NameUpdateEntity {
     constructor(
-        public email: string
+        public name: string
     ) {}
 }
 

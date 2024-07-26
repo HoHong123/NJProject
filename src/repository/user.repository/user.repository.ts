@@ -15,37 +15,28 @@ export class UserRepository {
   // TODO : - Return 타입 명시, Param 타입 명시 (void 타입 포함)
   //        - 비동기 함수는 반드시 Promise를 통해 반환값을 명시해야 한다.
   async create(args: Prisma.userCreateArgs) : Promise<UserEntity> {
-
     if (!args.data) throw new DuckException(ResponseCode.Validation, "User info is invalid.");
-
-    return this.dbService.user.create(args);
+    return this.dbService.duckUser.create(args);
   }
 
   async findUnique(args: Prisma.userFindUniqueArgs) : Promise<UserEntity> {
-
-    if (!args.where.id) throw new DuckException(ResponseCode.Validation, "User id is invalid.");
-
-    return this.dbService.user.findUnique(args);
+    //if (!args.where.id) throw new DuckException(ResponseCode.Validation, "User id is invalid.");
+    if (!args.where.id) return null;
+    return this.dbService.duckUser.findUnique(args);
   }
 
   async findMany(args?: Prisma.userFindManyArgs) : Promise<UserEntity[]> {
-
     if (!args) throw new DuckException(ResponseCode.Validation, "User info is invalid.");
-
-    return this.dbService.user.findMany(args);
+    return this.dbService.duckUser.findMany(args);
   }
 
   async delete(args: Prisma.userDeleteArgs) : Promise<UserEntity> {
-
     if (!args.where.id) throw new DuckException(ResponseCode.Validation, "User info is invalid.");
-
-    return this.dbService.user.delete(args);
+    return this.dbService.duckUser.delete(args);
   }
 
   async update(args: Prisma.userUpdateArgs) : Promise<UserEntity> {
-
     if (!args.data) throw new DuckException(ResponseCode.Validation, "User info is invalid.");
-
-    return this.dbService.user.update(args);
+    return this.dbService.duckUser.update(args);
   }
 }

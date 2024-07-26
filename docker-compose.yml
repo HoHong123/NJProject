@@ -11,6 +11,14 @@ services:
       - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      
+  redis:
+    image: redis:latest
+    container_name: fast_duck
+    env_file:
+      - .env
+    ports:
+      - '6378:6378'
 
 volumes:
   postgres-data:
